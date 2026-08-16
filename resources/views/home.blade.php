@@ -21,8 +21,25 @@
                     {{ $profil->sambutan_kepala_sekolah ?? 'Selamat datang di ' . ($profil->nama_sekolah ?? 'SMK Negeri 1 Cijati') . ' — tempat setiap siswa dibimbing untuk berpikir kritis, berkarya, dan tumbuh menjadi pribadi yang berintegritas.' }}
                 </p>
                 <div class="hero-cta">
-                    <a href="{{ route('profile') }}" class="btn btn-hero-primary">Lihat Profil <i class="bi bi-arrow-right"></i></a>
-                    <a href="{{ route('galeri') }}" class="btn btn-hero-outline">Lihat Galeri</a>
+                    <a href="{{ route('profile') }}" class="animated-button">
+                        <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+                        </svg>
+                            <span class="text">Lihat Profil</span>
+                                <span class="circle"></span>
+                            <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg>
+                    </a>
+                    <a href="{{ route('galeri') }}" class="animated-button animated-button-outline">
+                        <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+                        </svg>
+                        <span class="text">Lihat Galeri</span>
+                            <span class="circle"></span>
+                            <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
@@ -198,7 +215,16 @@
         </div>
 
         <div class="text-center mt-5" data-aos="fade-up">
-            <a href="{{ route('galeri') }}" class="btn btn-primary-school">Jelajahi Galeri Lengkap</a>
+            <a href="{{ route('galeri') }}" class="animated-button" style="width: 320px; justify-content: center; margin: 0 auto; --circle-fill-size: 450px;">
+    <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+    </svg>
+    <span class="text">Jelajahi Galeri Lengkap</span>
+    <span class="circle"></span>
+    <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+    </svg>
+</a>
         </div>
     </div>
 </section>

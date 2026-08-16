@@ -31,6 +31,7 @@ class ProfilController extends Controller
             'status' => 'nullable|string|max:50',
             'akreditasi' => 'nullable|string|max:10',
             'tahun_berdiri' => 'nullable|integer|min:1900|max:' . date('Y'),
+            'jumlah_kelas' => 'nullable|integer|min:0|max:9999',
             'alamat' => 'nullable|string|max:255',
             'telepon' => 'nullable|string|max:50',
             'email' => 'nullable|email|max:255',

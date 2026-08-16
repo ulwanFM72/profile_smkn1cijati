@@ -51,6 +51,13 @@
             <p class="value">{{ $totalSiswa }}</p>
         </div>
     </div>
+    <a href="{{ route('admin.profil.edit') }}" class="admin-stat-card" style="text-decoration:none;">
+        <div class="admin-stat-icon icon-amber"><i class="bi bi-door-open"></i></div>
+        <div>
+            <p class="label">Jumlah Kelas</p>
+            <p class="value">{{ $jumlahKelas }}</p>
+        </div>
+    </a>
 </div>
 
 <div class="admin-panel">

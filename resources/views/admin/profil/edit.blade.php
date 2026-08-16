@@ -43,6 +43,13 @@
                     <input type="text" name="akreditasi" class="admin-form-control" value="{{ old('akreditasi', $profil->akreditasi) }}" placeholder="A / B / C">
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-4 admin-form-group">
+                    <label class="admin-form-label">Jumlah Kelas</label>
+                    <input type="number" min="0" name="jumlah_kelas" class="admin-form-control" value="{{ old('jumlah_kelas', $profil->jumlah_kelas) }}" placeholder="Contoh: 20">
+                    <p class="admin-form-hint">Ditampilkan pada statistik "Jumlah Kelas" di halaman Beranda.</p>
+                </div>
+            </div>
         </div>
     </div>
 
