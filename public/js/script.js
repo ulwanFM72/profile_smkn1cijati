@@ -208,4 +208,44 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
+
+    // ==========================================================
+    // HERO SPOTLIGHT — cahaya kecil mengikuti kursor/sentuhan
+    // untuk membantu "menerangi" foto hero yang agak gelap
+    // ==========================================================
+    const heroSection = document.querySelector(".hero");
+    const heroSpotlight = document.getElementById("heroSpotlight");
+
+    if (heroSection && heroSpotlight) {
+        function moveSpotlight(clientX, clientY) {
+            const rect = heroSection.getBoundingClientRect();
+            const x = ((clientX - rect.left) / rect.width) * 100;
+            const y = ((clientY - rect.top) / rect.height) * 100;
+            heroSpotlight.style.setProperty("--spot-x", x + "%");
+            heroSpotlight.style.setProperty("--spot-y", y + "%");
+            heroSpotlight.classList.add("active");
+        }
+
+        // Desktop: ikuti gerakan mouse
+        heroSection.addEventListener("mousemove", function (e) {
+            moveSpotlight(e.clientX, e.clientY);
+        });
+        heroSection.addEventListener("mouseleave", function () {
+            heroSpotlight.classList.remove("active");
+        });
+
+        // Mobile/tablet: ikuti sentuhan jari
+        heroSection.addEventListener(
+            "touchmove",
+            function (e) {
+                if (e.touches && e.touches[0]) {
+                    moveSpotlight(e.touches[0].clientX, e.touches[0].clientY);
+                }
+            },
+            { passive: true },
+        );
+        heroSection.addEventListener("touchend", function () {
+            heroSpotlight.classList.remove("active");
+        });
+    }
 });

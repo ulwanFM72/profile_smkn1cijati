@@ -7,6 +7,7 @@
 {{-- HERO --}}
 <section class="hero" id="top">
     <div class="hero-overlay"></div>
+    <div class="hero-spotlight" id="heroSpotlight"></div>
     <div class="container hero-inner">
         <div class="row">
             <div class="col-lg-7 col-xl-6" data-aos="fade-up" data-aos-duration="700">
@@ -84,7 +85,6 @@
 <section class="section-block">
     <div class="container">
         <div class="section-heading" data-aos="fade-up">
-            <span class="eyebrow">Kabar Terbaru</span>
             <h2>Berita Kegiatan Sekolah</h2>
             <p>Ikuti perkembangan dan momen penting di lingkungan sekolah kami.</p>
         </div>
@@ -141,7 +141,6 @@
 <section class="section-block">
     <div class="container">
         <div class="section-heading" data-aos="fade-up">
-            <span class="eyebrow">Kembangkan Bakat</span>
             <h2>Ekstrakurikuler Pilihan</h2>
             <p>Ruang bagi siswa mengasah minat di luar kelas, dari seni, olahraga, hingga sains.</p>
         </div>
@@ -184,7 +183,6 @@
 <section class="section-block bg-soft">
     <div class="container">
         <div class="section-heading" data-aos="fade-up">
-            <span class="eyebrow">Momen Sekolah</span>
             <h2>Galeri Kegiatan</h2>
             <p>Cuplikan aktivitas, prestasi, dan keseharian di lingkungan sekolah. Klik foto untuk memperbesar.</p>
         </div>

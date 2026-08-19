@@ -1,12 +1,12 @@
 <footer class="footer-school" id="kontak">
     <div class="container">
-        <div class="row gy-4">
+        <div class="row gy-3">
             <div class="col-lg-4">
                 <a class="brand-text footer-brand" href="{{ route('home') }}">
-                    <img src="{{ asset('images/logo-smkn1cijati.png') }}" alt="Logo Sekolah" class="brand-logo">
+                    <img src="{{ asset('images/logo-smkn1cijati.webp') }}" alt="Logo Sekolah" class="brand-logo">
                     {{ $profil->nama_sekolah ?? 'SMK Negeri 1 Cijati' }}
                 </a>
-                <p class="footer-desc mt-3">
+                <p class="footer-desc mt-2">
                     {{ Str::limit($profil->visi ?? 'Mendidik generasi berkarakter, cerdas, dan siap menghadapi masa depan.', 140) }}
                 </p>
             </div>

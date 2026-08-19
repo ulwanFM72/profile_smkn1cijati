@@ -265,8 +265,8 @@ button:focus-visible {
 }
 
 .brand-logo {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     object-fit: contain;
 }
 
@@ -382,7 +382,7 @@ button:focus-visible {
             rgba(20, 33, 61, 0.4) 45%,
             rgba(20, 33, 61, 0.85) 100%
         ),
-        url("../images/hero-bg.jpg");
+        url("../images/hero-bg-1.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -401,6 +401,26 @@ button:focus-visible {
         rgba(232, 163, 61, 0) 55%
     );
     z-index: 0;
+}
+
+/* Spotlight yang mengikuti kursor — membantu "menerangi" foto hero
+   yang agak gelap (diambil sore hari). Kecerahan sedang, radius kecil. */
+.hero-spotlight {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: radial-gradient(
+        circle 300px at var(--spot-x, 60%) var(--spot-y, 55%),
+        rgba(255, 237, 199, 0.28) 0%,
+        rgba(255, 237, 199, 0.1) 45%,
+        transparent 75%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+.hero-spotlight.active {
+    opacity: 1;
 }
 
 .hero-inner {
@@ -506,7 +526,7 @@ button:focus-visible {
 .hero-stats-bar {
     background: var(--navy-900);
     border-radius: var(--radius-lg);
-    padding: 22px 20px; /* sebelumnya 30px 20px */
+    padding: 22px 20px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
@@ -517,7 +537,7 @@ button:focus-visible {
 .hero-stat-item {
     display: flex;
     align-items: center;
-    gap: 12px; /* sebelumnya 14px */
+    gap: 12px;
     justify-content: center;
     padding: 0 10px;
     border-right: 1px solid rgba(255, 255, 255, 0.12);
@@ -527,7 +547,7 @@ button:focus-visible {
 }
 
 .hero-stat-item i {
-    font-size: 25px; /* sebelumnya 28px */
+    font-size: 25px;
     color: var(--gold-400);
     flex-shrink: 0;
 }
@@ -539,15 +559,15 @@ button:focus-visible {
 }
 
 .hero-stat-item strong .counter {
-    font-size: 20px; /* sebelumnya 40px */
+    font-size: 20px;
 }
 
 .hero-stat-item strong .counter-plus {
-    font-size: 35px; /* sebelumnya 24px */
+    font-size: 40px;
 }
 
 .hero-stat-item span {
-    font-size: 13px; /* sebelumnya 12px */
+    font-size: 13px;
     color: rgba(255, 255, 255, 0.65);
 }
 
@@ -634,7 +654,7 @@ button:focus-visible {
             rgba(20, 33, 61, 0.5) 50%,
             rgba(20, 33, 61, 0.82) 100%
         ),
-        url("../images/hero-bg.jpg");
+        url("../images/hero-bg.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-school navbar-transparent fixed-top" id="mainNavbar">
     <div class="container">
         <a class="navbar-brand" href="{{ route('home') }}">
-            <img src="{{ asset('images/logo-smkn1cijati.png') }}" alt="Logo Sekolah" class="brand-logo">
+            <img src="{{ asset('images/logo-smkn1cijati.webp') }}" alt="Logo Sekolah" class="brand-logo">
             <span class="brand-text">{{ $profil->nama_sekolah ?? 'SMK Negeri 1 Cijati' }}</span>
         </a>
  
