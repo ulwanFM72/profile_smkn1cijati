@@ -128,8 +128,7 @@
         <div class="row g-4" id="guruGrid">
     @forelse($guru as $index => $item)
         <div class="col-6 col-md-4 col-lg-3 {{ $index >= 12 ? 'guru-extra d-none' : '' }}" data-aos="fade-up" data-aos-delay="{{ ($index % 4) * 100 }}">
-            <div class="card-guru" 
-     data-tilt data-tilt-max="30" data-tilt-speed="250" data-tilt-perspective="700"data-tilt-scale="1.1" data-tilt-glare data-tilt-max-glare="0.5">
+            <div class="card-guru">
                 <div class="card-guru-photo">
                     @if($item->foto)
                         <img src="{{ asset('storage/' . $item->foto) }}" alt="{{ $item->nama }}" loading="lazy">

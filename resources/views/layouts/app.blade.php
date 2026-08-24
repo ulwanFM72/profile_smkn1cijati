@@ -154,24 +154,5 @@
 </script>
 @endif
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
-
-@push('scripts')
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    VanillaTilt.init(document.querySelectorAll(".card-guru"), {
-        max: 30,
-        speed: 400,
-        glare: true,
-        perspective: 700,
-        "max-glare": 0.5,
-        scale: 1.1
-        easing: "cubic-bezier(.03,.98,.52,.99)",
-    });
-});
-</script>
-@endpush
 </body>
 </html>

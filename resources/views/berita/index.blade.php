@@ -16,7 +16,7 @@
         <div class="row g-4">
             @forelse($berita as $index => $item)
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="{{ ($index % 3) * 100 }}">
-                    <div class="card-berita">3
+                    <div class="card-berita">
                         <div class="card-berita-img">
                             <img src="{{ asset('storage/' . $item->gambar) }}" alt="{{ $item->judul }}" loading="lazy">
                             <span class="card-berita-date">
@@ -42,7 +42,7 @@
 
         @if(method_exists($berita, 'links'))
             <div class="mt-5 d-flex justify-content-center">
-                {{ $berita->links() }}
+                {{ $berita->links('pagination::bootstrap-5') }}
             </div>
         @endif
     </div>

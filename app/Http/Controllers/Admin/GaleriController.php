@@ -25,8 +25,8 @@ class GaleriController extends Controller
     {
         $validated = $request->validate([
             'judul' => 'required|string|max:255',
-            'kategori' => 'required|string|max:100',
-            'gambar' => 'required|image|max:2048',
+            'kategori' => 'required|string|max:300',
+            'gambar' => 'required|image|max:4048',
         ]);
 
         $validated['gambar'] = $request->file('gambar')->store('galeri', 'public');

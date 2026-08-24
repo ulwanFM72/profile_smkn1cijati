@@ -1407,6 +1407,7 @@ button:focus-visible {
     .hero {
         padding: 150px 0 70px;
         text-align: center;
+        background-position: 88% center;
     }
     .hero-inner .row {
         justify-content: center;
@@ -1497,7 +1498,6 @@ button:focus-visible {
     color: var(--navy-700);
 }
 
-/* Animated CTA button (adapted from Uiverse.io by gharsh11032000) */
 .animated-button {
     --btn-accent: var(--gold-500);
     --btn-hover-text: var(--navy-900);
@@ -1578,7 +1578,6 @@ button:focus-visible {
     opacity: 1;
 }
 
-/* Outline variant — dipakai di atas foto hero yang gelap */
 .animated-button-outline {
     --btn-accent: rgba(255, 255, 255, 0.9);
     --btn-hover-text: var(--navy-900);
@@ -1586,8 +1585,22 @@ button:focus-visible {
 }
 
 .btn-jelajahi-galeri {
-    width: 320px; /* lebar normal */
+    width: 320px;
 }
 .btn-jelajahi-galeri:hover {
-    width: 400px; /* melebar 40px saat hover */
+    width: 400px;
+}
+
+.pagination .page-link {
+    color: var(--navy-900);
+    border-color: var(--cream-200);
+    padding: 8px 14px;
+}
+.pagination .page-item.active .page-link {
+    background-color: var(--navy-900);
+    border-color: var(--navy-900);
+}
+.pagination .page-link:hover {
+    color: var(--gold-500);
+    background-color: var(--cream-200);
 }
