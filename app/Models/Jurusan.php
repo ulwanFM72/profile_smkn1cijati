@@ -18,6 +18,8 @@ class Jurusan extends Model
         'slug',
         'deskripsi',
         'kompetensi',
+        'kepala_program',
+        'foto_kepala_program',
         'foto_sampul',
         'icon',
     ];

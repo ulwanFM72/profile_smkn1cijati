@@ -45,6 +45,25 @@
                 </a>
             </div>
         </div>
+
+        @if($jurusan->kepala_program)
+        <div class="row justify-content-center mt-5" data-aos="fade-up">
+            <div class="col-md-5">
+                <div class="card-guru" style="padding: 30px;">
+                    <div class="card-guru-photo" style="width: 100px; height: 100px;">
+                        @if($jurusan->foto_kepala_program)
+                            <img src="{{ asset('storage/' . $jurusan->foto_kepala_program) }}" alt="{{ $jurusan->kepala_program }}" loading="lazy">
+                        @else
+                            <div class="card-guru-photo-placeholder"><i class="bi bi-person"></i></div>
+                        @endif
+                    </div>
+                    <p class="eyebrow mb-1" style="font-size: 11px;">Kepala Program Keahlian</p>
+                    <h6 style="font-size: 17px;">{{ $jurusan->kepala_program }}</h6>
+                    <p>{{ $jurusan->singkatan }} &middot; {{ $jurusan->nama }}</p>
+                </div>
+            </div>
+        </div>
+        @endif
     </div>
 </section>
 

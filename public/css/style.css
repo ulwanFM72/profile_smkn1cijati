@@ -1233,6 +1233,38 @@ button:focus-visible {
     color: var(--gold-400);
 }
 
+/* Peta lokasi sekolah di footer.
+   Atur --footer-map-size untuk mengubah ukuran kotak peta (default 150px). */
+.footer-map-wrap {
+    --footer-map-size: 150px;
+    width: var(--footer-map-size);
+    max-width: 100%;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+.footer-map {
+    display: block;
+    width: 100%;
+    height: var(--footer-map-size);
+    border: 0;
+}
+.footer-map-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gold-400);
+    transition: var(--transition-base);
+}
+.footer-map-link:hover {
+    color: var(--white);
+    gap: 9px;
+}
+
 .footer-social {
     display: flex;
     gap: 10px;
@@ -1442,6 +1474,15 @@ button:focus-visible {
     .hero + section {
         padding-top: 110px;
     }
+
+    .footer-map-wrap {
+        --footer-map-size: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+    .footer-map {
+        height: 180px;
+    }
 }
 
 @media (max-width: 575px) {
@@ -1464,6 +1505,13 @@ button:focus-visible {
     }
     .hero-stat-item span {
         font-size: 10px;
+    }
+
+    .footer-map-wrap {
+        max-width: 100%;
+    }
+    .footer-map {
+        height: 160px;
     }
 }
 

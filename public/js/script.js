@@ -10,12 +10,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const navbar = document.getElementById("mainNavbar");
     const backToTop = document.querySelector(".back-to-top");
+    let footerVisible = false;
 
     function handleScroll() {
         const scrolled = window.scrollY > 40;
         if (navbar) navbar.classList.toggle("scrolled", scrolled);
         if (backToTop)
-            backToTop.classList.toggle("visible", window.scrollY > 400);
+            backToTop.classList.toggle(
+                "visible",
+                window.scrollY > 400 && !footerVisible,
+            );
+    }
+
+    const footerEl = document.getElementById("kontak");
+    if (footerEl && backToTop && "IntersectionObserver" in window) {
+        const footerObserver = new IntersectionObserver(
+            function (entries) {
+                entries.forEach(function (entry) {
+                    footerVisible = entry.isIntersecting;
+                    handleScroll();
+                });
+            },
+            { threshold: 0.05 },
+        );
+        footerObserver.observe(footerEl);
     }
 
     window.addEventListener("scroll", handleScroll);
@@ -182,9 +200,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // ==========================================================
-    // LIHAT SELENGKAPNYA — Grid Guru & Staf Pengajar
-    // ==========================================================
     const btnGuruMore = document.getElementById("btnGuruMore");
 
     if (btnGuruMore) {
@@ -209,10 +224,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // ==========================================================
-    // HERO SPOTLIGHT — cahaya kecil mengikuti kursor/sentuhan
-    // untuk membantu "menerangi" foto hero yang agak gelap
-    // ==========================================================
     const heroSection = document.querySelector(".hero");
     const heroSpotlight = document.getElementById("heroSpotlight");
 
@@ -226,7 +237,6 @@ document.addEventListener("DOMContentLoaded", function () {
             heroSpotlight.classList.add("active");
         }
 
-        // Desktop: ikuti gerakan mouse
         heroSection.addEventListener("mousemove", function (e) {
             moveSpotlight(e.clientX, e.clientY);
         });
@@ -234,7 +244,6 @@ document.addEventListener("DOMContentLoaded", function () {
             heroSpotlight.classList.remove("active");
         });
 
-        // Mobile/tablet: ikuti sentuhan jari
         heroSection.addEventListener(
             "touchmove",
             function (e) {
