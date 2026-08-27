@@ -1667,7 +1667,7 @@ button:focus-visible {
 
 .coverflow-stage {
     position: relative;
-    height: 580px;
+    height: 570px;
     display: flex;
     align-items: center;
     justify-content: center;
