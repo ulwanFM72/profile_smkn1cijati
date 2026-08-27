@@ -16,7 +16,7 @@
                 </h1>
                 <p class="hero-motto">
                     <i class="bi bi-quote"></i>
-                    {{ $profil->motto ?? 'Berkarakter, Berprestasi, Berbudaya' }}
+                    {{ $profil->motto ?? 'Cageur, Bageur, Bener, Pinter, Singer' }}
                 </p>
                 <p class="hero-desc">
                     {{ $profil->sambutan_kepala_sekolah ?? 'Selamat datang di ' . ($profil->nama_sekolah ?? 'SMK Negeri 1 Cijati') . ' — tempat setiap siswa dibimbing untuk berpikir kritis, berkarya, dan tumbuh menjadi pribadi yang berintegritas.' }}

@@ -1652,3 +1652,180 @@ button:focus-visible {
     color: var(--gold-500);
     background-color: var(--cream-200);
 }
+
+/* ==========================================================
+   COVERFLOW JURUSAN — stacked carousel
+   Satu kartu fokus di tengah, kartu lain berderet miring
+   mengecil ke kiri/kanan. Posisi diatur lewat inline style
+   (transform/opacity/z-index) oleh JS di script.js;
+   CSS di sini hanya menata bentuk dasar & tampilan tiap kartu.
+   ========================================================== */
+
+.coverflow-jurusan {
+    position: relative;
+}
+
+.coverflow-stage {
+    position: relative;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1500px;
+    outline: none;
+}
+
+.coverflow-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    touch-action: pan-y;
+}
+
+.coverflow-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    margin-top: -210px;
+    will-change: transform, opacity;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.coverflow-item.is-active {
+    cursor: default;
+}
+
+.coverflow-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    height: 420px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 45px rgba(20, 33, 61, 0.18);
+    border: 1px solid rgba(20, 33, 61, 0.05);
+}
+
+.coverflow-item.is-active .coverflow-card {
+    box-shadow: 0 30px 60px rgba(20, 33, 61, 0.28);
+}
+
+.coverflow-card-img {
+    aspect-ratio: 16 / 11;
+    overflow: hidden;
+    background: var(--cream-200);
+    flex-shrink: 0;
+}
+.coverflow-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -webkit-user-drag: none;
+}
+.coverflow-card-img-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    color: var(--navy-800);
+    background: linear-gradient(135deg, var(--cream-200), var(--cream-100));
+}
+
+.coverflow-card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.coverflow-card-body h5 {
+    margin-bottom: 6px;
+}
+.coverflow-card-body p {
+    color: var(--ink-600);
+    font-size: 13.5px;
+    margin: 0 0 8px;
+}
+.coverflow-card-body p:nth-of-type(2) {
+    flex-grow: 1;
+}
+.coverflow-card-body .card-ekskul-link {
+    position: relative;
+    z-index: 1;
+}
+/* Cegah link ikut ter-hover/terklik terpisah saat kartu belum aktif —
+   klik di dalamnya tetap ditangani oleh .coverflow-item (lihat script.js),
+   yang akan memindahkan fokus ke kartu ini terlebih dulu. */
+.coverflow-item:not(.is-active) .coverflow-card-body .card-ekskul-link {
+    pointer-events: none;
+}
+
+.coverflow-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 30px;
+}
+.coverflow-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--cream-200);
+    border: none;
+    padding: 0;
+    transition: var(--transition-base);
+}
+.coverflow-dot:hover {
+    background: var(--gold-400);
+}
+.coverflow-dot.is-active {
+    background: var(--gold-500);
+    width: 24px;
+    border-radius: 6px;
+}
+
+@media (max-width: 767px) {
+    .coverflow-stage {
+        height: 440px;
+    }
+    .coverflow-item {
+        width: 235px;
+        margin-top: -185px;
+    }
+    .coverflow-card {
+        height: 370px;
+    }
+}
+
+@media (max-width: 480px) {
+    .coverflow-stage {
+        height: 400px;
+    }
+    .coverflow-item {
+        width: 195px;
+        margin-top: -165px;
+    }
+    .coverflow-card {
+        height: 330px;
+    }
+    .coverflow-card-body {
+        padding: 14px;
+    }
+    .coverflow-card-body h5 {
+        font-size: 15px;
+    }
+    .coverflow-card-body p {
+        font-size: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .coverflow-item {
+        transition: opacity 0.3s ease !important;
+    }
+}
