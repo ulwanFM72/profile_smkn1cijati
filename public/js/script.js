@@ -296,9 +296,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         const settings = {
-            xs: { spacing: 125, rotate: 26, depth: 100, scaleStep: 0.16 },
-            sm: { spacing: 170, rotate: 28, depth: 125, scaleStep: 0.15 },
-            md: { spacing: 235, rotate: 32, depth: 155, scaleStep: 0.14 },
+            xs: { spacing: 145, rotate: 26, depth: 115, scaleStep: 0.16 },
+            sm: { spacing: 195, rotate: 28, depth: 145, scaleStep: 0.15 },
+            md: { spacing: 280, rotate: 32, depth: 180, scaleStep: 0.14 },
         };
 
         function shortestDiff(i, from) {
