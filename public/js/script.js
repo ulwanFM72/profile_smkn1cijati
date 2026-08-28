@@ -22,8 +22,6 @@ document.addEventListener("DOMContentLoaded", function () {
             );
     }
 
-    // Sembunyikan tombol back-to-top saat footer (termasuk peta) terlihat,
-    // supaya tombol tidak menutupi/menghalangi peta atau link footer di mobile.
     const footerEl = document.getElementById("kontak");
     if (footerEl && backToTop && "IntersectionObserver" in window) {
         const footerObserver = new IntersectionObserver(
@@ -202,9 +200,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // ==========================================================
-    // LIHAT SELENGKAPNYA — Grid Guru & Staf Pengajar
-    // ==========================================================
     const btnGuruMore = document.getElementById("btnGuruMore");
 
     if (btnGuruMore) {
@@ -229,10 +224,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // ==========================================================
-    // HERO SPOTLIGHT — cahaya kecil mengikuti kursor/sentuhan
-    // untuk membantu "menerangi" foto hero yang agak gelap
-    // ==========================================================
     const heroSection = document.querySelector(".hero");
     const heroSpotlight = document.getElementById("heroSpotlight");
 
@@ -269,10 +260,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // ==========================================================
-    // COVERFLOW JURUSAN — kartu tengah fokus, kartu lain
-    // berderet miring & mengecil ke belakang kiri/kanan
-    // ==========================================================
     const coverflowTrack = document.getElementById("coverflowTrack");
 
     if (coverflowTrack) {
@@ -308,9 +295,6 @@ document.addEventListener("DOMContentLoaded", function () {
             return diff;
         }
 
-        // Batas jarak (dari kartu aktif) yang masih ditampilkan.
-        // 1 = hanya kartu aktif + satu tetangga kiri & satu kanan yang terlihat;
-        // sisanya disembunyikan (opacity 0) di belakang, tidak ikut terlihat/diklik.
         const VISIBLE_RANGE = 1;
 
         function render() {
@@ -354,18 +338,6 @@ document.addEventListener("DOMContentLoaded", function () {
             render();
         }
 
-        // Klik langsung pada kartu (mouse maupun sentuh) untuk memilihnya.
-        //
-        // Catatan teknis: kartu di sini di-transform secara 3D (rotateY +
-        // translateZ di bawah perspective). Sebagian browser kurang akurat
-        // saat menentukan elemen yang "kena" klik pada objek yang diputar/
-        // didorong ke belakang secara 3D, sehingga deteksi klik bawaan
-        // (event.target) bisa meleset dari kartu yang terlihat.
-        //
-        // Solusinya: hitung sendiri posisi kartu di layar lewat
-        // getBoundingClientRect() (akurat & konsisten di semua browser,
-        // termasuk untuk elemen yang di-transform), lalu cocokkan manual
-        // dengan koordinat klik.
         coverflowTrack.addEventListener("click", function (e) {
             const clickX = e.clientX;
             const clickY = e.clientY;

@@ -1048,6 +1048,33 @@ button:focus-visible {
     margin: 0;
 }
 
+/* Bingkai foto/logo jurusan.
+   Atur --jurusan-foto-size untuk ubah lebar maksimal bingkai,
+   dan aspect-ratio untuk ubah bentuk bingkai (4/3, 1/1, 16/9, dst). */
+.jurusan-foto-wrap {
+    --jurusan-foto-size: 340px;
+    width: 100%;
+    max-width: var(--jurusan-foto-size);
+    aspect-ratio: 4 / 3;
+    margin: 0 0 28px 0;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
+    background: var(--white);
+    padding: 18px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jurusan-foto-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
 .table-profil-wrap {
     background: var(--white);
     border-radius: var(--radius-lg);
@@ -1265,8 +1292,36 @@ button:focus-visible {
     gap: 9px;
 }
 
+/* Kolom "Ikuti Kami" — dipusatkan secara horizontal di dalam kolomnya
+   sendiri (judul & ikon), supaya terlihat simetris meskipun kolom lain
+   di sampingnya (peta) jauh lebih tinggi. Perataan vertikal antar kolom
+   diatur lewat class "align-items-lg-center" pada .row di footer.blade.php. */
+.footer-col {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.footer-col-body {
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer-col-center {
+    text-align: center;
+}
+
+.footer-col-center .footer-col-body {
+    align-items: center;
+}
+
 .footer-social {
     display: flex;
+    justify-content: center;
     gap: 10px;
 }
 .footer-social a {

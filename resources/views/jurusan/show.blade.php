@@ -15,9 +15,10 @@
         <div class="row gy-5 align-items-start">
             <div class="col-lg-6" data-aos="fade-right">
                 @if($jurusan->foto_sampul)
-                    <img src="{{ asset('storage/' . $jurusan->foto_sampul) }}" alt="{{ $jurusan->nama }}"
-                         class="w-100 mb-4" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-soft); aspect-ratio: 4/3; object-fit: cover;">
-                @endif
+    <div class="jurusan-foto-wrap">
+        <img src="{{ asset('storage/' . $jurusan->foto_sampul) }}" alt="{{ $jurusan->nama }}">
+    </div>
+@endif
 
                 <h2 class="mb-3">Tentang Jurusan</h2>
                 <p class="text-body-muted">{{ $jurusan->deskripsi }}</p>

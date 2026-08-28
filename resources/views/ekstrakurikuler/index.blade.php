@@ -12,7 +12,7 @@
 </section>
 
 <section class="section-block">
-    <button class="btn-daftar-eskul" onclick="window.open('https://reg-eskul.smkn1cijati.sch.id/', '_blank')">Daftar Ekstrakurikuler</button>
+    <button class="btn-daftar-eskul" onclick="window.open('https://reg-eskul.smkn1cijati.sch.id/', '_blank')">Daftar Ekstrakurikuler Disini</button>
     <div class="container">
         <div class="row g-4">
             @forelse($ekstrakurikuler as $index => $ekskul)

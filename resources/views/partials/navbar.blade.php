@@ -27,9 +27,6 @@
                 <li class="nav-item">
                     <a class="nav-link {{ request()->routeIs('galeri') ? 'active' : '' }}" href="{{ route('galeri') }}">Galeri</a>
                 </li>
-                <li class="nav-item ms-lg-3">
-                    <a class="btn btn-nav-cta" href="#kontak">Hubungi Kami</a>
-                </li>
  
                 @guest
                     <li class="nav-item ms-lg-3">
