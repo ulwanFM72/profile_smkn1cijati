@@ -1075,6 +1075,13 @@ button:focus-visible {
     display: block;
 }
 
+@media (max-width: 991px) {
+    .jurusan-foto-wrap {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 .table-profil-wrap {
     background: var(--white);
     border-radius: var(--radius-lg);

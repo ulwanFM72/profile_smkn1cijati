@@ -11,6 +11,33 @@ use Illuminate\Support\Facades\Storage;
 
 class JurusanController extends Controller
 {
+    /**
+     * Aturan validasi yang dipakai bersama oleh store() dan update()
+     */
+    private function rules(): array
+    {
+        return [
+            'nama'                 => ['required', 'string', 'max:255', 'regex:/^[\pL\s\.\-\'&]+$/u'],
+            'singkatan'            => ['required', 'string', 'max:20', 'regex:/^[\pL]+$/u'],
+            'deskripsi'            => ['nullable', 'string'],
+            'kompetensi'           => ['nullable', 'string'],
+            'kepala_program'       => ['nullable', 'string', 'max:255', 'regex:/^[\pL\s\.\-\',]+$/u'],
+            'icon'                 => ['nullable', 'string', 'max:100', 'regex:/^[a-z0-9\-_\s]+$/i'],
+            'foto_sampul'          => ['nullable', 'image', 'max:2048'],
+            'foto_kepala_program'  => ['nullable', 'image', 'max:2048'],
+        ];
+    }
+
+    private function messages(): array
+    {
+        return [
+            'nama.regex'              => 'Nama jurusan hanya boleh berisi huruf dan spasi.',
+            'singkatan.regex'         => 'Singkatan hanya boleh berisi huruf, tanpa spasi, angka, atau simbol.',
+            'kepala_program.regex'    => 'Nama kepala program hanya boleh berisi huruf, spasi, titik, koma, dan strip (untuk gelar).',
+            'icon.regex'              => 'Icon hanya boleh berisi huruf, angka, strip, dan underscore (contoh: bi-cpu, fa-laptop-code).',
+        ];
+    }
+
     public function index()
     {
         $jurusan = Jurusan::withCount('galeri')->orderBy('nama')->get();
@@ -25,16 +52,7 @@ class JurusanController extends Controller
 
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'nama' => 'required|string|max:255',
-            'singkatan' => 'required|string|max:20',
-            'deskripsi' => 'nullable|string',
-            'kompetensi' => 'nullable|string',
-            'kepala_program' => 'nullable|string|max:255',
-            'icon' => 'nullable|string|max:100',
-            'foto_sampul' => 'nullable|image|max:2048',
-            'foto_kepala_program' => 'nullable|image|max:2048',
-        ]);
+        $validated = $request->validate($this->rules(), $this->messages());
 
         $validated['slug'] = Str::slug($validated['singkatan']);
 
@@ -59,16 +77,7 @@ class JurusanController extends Controller
 
     public function update(Request $request, Jurusan $jurusan)
     {
-        $validated = $request->validate([
-            'nama' => 'required|string|max:255',
-            'singkatan' => 'required|string|max:20',
-            'deskripsi' => 'nullable|string',
-            'kompetensi' => 'nullable|string',
-            'kepala_program' => 'nullable|string|max:255',
-            'icon' => 'nullable|string|max:100',
-            'foto_sampul' => 'nullable|image|max:2048',
-            'foto_kepala_program' => 'nullable|image|max:2048',
-        ]);
+        $validated = $request->validate($this->rules(), $this->messages());
 
         if ($request->hasFile('foto_sampul')) {
             if ($jurusan->foto_sampul) {
@@ -111,8 +120,8 @@ class JurusanController extends Controller
     public function storeGaleri(Request $request, Jurusan $jurusan)
     {
         $request->validate([
-            'gambar' => 'required|image|max:2048',
-            'keterangan' => 'nullable|string|max:255',
+            'gambar'     => ['required', 'image', 'max:2048'],
+            'keterangan' => ['nullable', 'string', 'max:255'],
         ]);
 
         $path = $request->file('gambar')->store('jurusan', 'public');

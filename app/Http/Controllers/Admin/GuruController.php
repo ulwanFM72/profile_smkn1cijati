@@ -9,6 +9,26 @@ use Illuminate\Support\Facades\Storage;
 
 class GuruController extends Controller
 {
+    /**
+     * Aturan validasi yang dipakai bersama oleh store() dan update()
+     */
+    private function rules(): array
+    {
+        return [
+            'nama'    => ['required', 'string', 'max:255', 'regex:/^[\pL\s\.\-\',]+$/u'],
+            'jabatan' => ['nullable', 'string', 'max:255', 'regex:/^[\pL\s\.\-\',\/&]+$/u'],
+            'foto'    => ['nullable', 'image', 'max:2048'],
+        ];
+    }
+
+    private function messages(): array
+    {
+        return [
+            'nama.regex'    => 'Nama guru hanya boleh berisi huruf, spasi, titik, koma, dan strip (untuk gelar).',
+            'jabatan.regex' => 'Jabatan hanya boleh berisi huruf, spasi, titik, koma, strip, garis miring, dan tanda &.',
+        ];
+    }
+
     public function index()
     {
         $guru = Guru::orderBy('nama')->get();
@@ -23,11 +43,7 @@ class GuruController extends Controller
 
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'nama' => 'required|string|max:255',
-            'jabatan' => 'nullable|string|max:255',
-            'foto' => 'nullable|image|max:2048',
-        ]);
+        $validated = $request->validate($this->rules(), $this->messages());
 
         if ($request->hasFile('foto')) {
             $validated['foto'] = $request->file('foto')->store('guru', 'public');
@@ -45,11 +61,7 @@ class GuruController extends Controller
 
     public function update(Request $request, Guru $guru)
     {
-        $validated = $request->validate([
-            'nama' => 'required|string|max:255',
-            'jabatan' => 'nullable|string|max:255',
-            'foto' => 'nullable|image|max:2048',
-        ]);
+        $validated = $request->validate($this->rules(), $this->messages());
 
         if ($request->hasFile('foto')) {
             if ($guru->foto) {
