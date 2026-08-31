@@ -1,3 +1,4 @@
+/* ===== VARIABEL DESAIN GLOBAL (WARNA, FONT, RADIUS, BAYANGAN) ===== */
 :root {
     --navy-900: #14213d;
     --navy-800: #1b2a4a;
@@ -22,10 +23,12 @@
     --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* ===== RESET DASAR ===== */
 * {
     box-sizing: border-box;
 }
 
+/* ===== PERILAKU SCROLL & GAYA DASAR BODY (TERMASUK ANIMASI FADE-IN HALAMAN) ===== */
 html {
     scroll-behavior: smooth;
 }
@@ -47,6 +50,7 @@ body {
     }
 }
 
+/* ===== TIPOGRAFI & WARNA TEKS UMUM ===== */
 h1,
 h2,
 h3,
@@ -75,6 +79,7 @@ a {
     color: var(--navy-900);
 }
 
+/* ===== PRELOADER (LAYAR MUAT/LOADING SEBELUM HALAMAN TAMPIL) ===== */
 #preloader {
     position: fixed;
     inset: 0;
@@ -146,12 +151,14 @@ a {
     }
 }
 
+/* ===== GAYA FOKUS KEYBOARD UNTUK AKSESIBILITAS ===== */
 a:focus-visible,
 button:focus-visible {
     outline: 3px solid var(--gold-500);
     outline-offset: 2px;
 }
 
+/* ===== NAVBAR — LATAR & STATE SAAT DI-SCROLL / TRANSPARAN ===== */
 .navbar-school {
     background-color: rgba(250, 247, 240, 0.85);
     backdrop-filter: blur(10px);
@@ -239,6 +246,7 @@ button:focus-visible {
     color: var(--gold-500);
 }
 
+/* ===== LOGO & NAMA SEKOLAH DI NAVBAR ===== */
 .navbar-brand {
     display: flex;
     align-items: center;
@@ -270,6 +278,7 @@ button:focus-visible {
     object-fit: contain;
 }
 
+/* ===== LINK MENU NAVIGASI ===== */
 .navbar-nav .nav-link {
     color: var(--navy-900);
     font-weight: 500;
@@ -301,6 +310,7 @@ button:focus-visible {
     transform: scaleX(1);
 }
 
+/* ===== TOMBOL CTA NAVBAR & VARIAN TOMBOL UTAMA SEKOLAH ===== */
 .btn-nav-cta {
     background: var(--navy-900);
     color: var(--white) !important;
@@ -371,6 +381,7 @@ button:focus-visible {
     box-shadow: var(--shadow-hover);
 }
 
+/* ===== SEKSI HERO (BANNER UTAMA BERANDA) ===== */
 .hero {
     position: relative;
     padding: 190px 0 110px;
@@ -423,6 +434,7 @@ button:focus-visible {
     opacity: 1;
 }
 
+/* ===== KONTEN TEKS DI SEKSI HERO (JUDUL, MOTTO, DESKRIPSI, CTA) ===== */
 .hero-inner {
     position: relative;
     z-index: 1;
@@ -481,6 +493,7 @@ button:focus-visible {
     gap: 14px;
 }
 
+/* ===== TOMBOL CTA DI SEKSI HERO ===== */
 .btn-hero-primary {
     background: var(--gold-500);
     color: var(--navy-900);
@@ -517,6 +530,7 @@ button:focus-visible {
     transform: translateY(-3px);
 }
 
+/* ===== BILAH STATISTIK MENGAMBANG DI BAWAH HERO ===== */
 .hero-stats-wrap {
     position: relative;
     z-index: 2;
@@ -575,6 +589,7 @@ button:focus-visible {
     padding-top: 150px;
 }
 
+/* ===== ANIMASI MENGAMBANG PELAN (DIPAKAI ELEMEN DEKORATIF) ===== */
 @keyframes floatSlow {
     0%,
     100% {
@@ -585,6 +600,7 @@ button:focus-visible {
     }
 }
 
+/* ===== SEKSI RINGKASAN STATISTIK SEKOLAH ===== */
 .stats-section {
     padding: 60px 0;
 }
@@ -622,6 +638,7 @@ button:focus-visible {
     color: rgba(255, 255, 255, 0.75);
 }
 
+/* ===== PEMBUNGKUS & JUDUL SEKSI UMUM (DIPAKAI DI BANYAK HALAMAN) ===== */
 .section-block {
     padding: 90px 0;
 }
@@ -643,6 +660,7 @@ button:focus-visible {
     margin: 0;
 }
 
+/* ===== HEADER HALAMAN DALAM (BANNER JUDUL DI HALAMAN SELAIN BERANDA) ===== */
 .page-header {
     position: relative;
     padding: 240px 0 120px;
@@ -675,6 +693,7 @@ button:focus-visible {
     color: rgba(255, 255, 255, 0.82);
 }
 
+/* ===== KARTU EKSTRAKURIKULER — TAMPILAN RINGKAS (DI BERANDA) ===== */
 .card-ekskul {
     background: var(--white);
     border-radius: var(--radius-lg);
@@ -735,6 +754,7 @@ button:focus-visible {
     margin-right: 6px;
 }
 
+/* ===== KARTU EKSTRAKURIKULER — TAMPILAN LENGKAP (DI HALAMAN DAFTAR EKSKUL) ===== */
 .card-ekskul-full {
     background: var(--white);
     border-radius: var(--radius-lg);
@@ -819,6 +839,7 @@ button:focus-visible {
     gap: 10px;
 }
 
+/* ===== KARTU BERITA ===== */
 .card-berita {
     background: var(--white);
     border-radius: var(--radius-lg);
@@ -905,6 +926,7 @@ button:focus-visible {
     gap: 10px;
 }
 
+/* ===== KARTU GALERI FOTO & BADGE KATEGORI ===== */
 .card-galeri {
     position: relative;
     border-radius: var(--radius-md);
@@ -1003,6 +1025,7 @@ button:focus-visible {
     font-size: 30px;
 }
 
+/* ===== BLOK KUTIPAN SAMBUTAN KEPALA SEKOLAH ===== */
 .quote-block {
     border-left: 4px solid var(--gold-500);
     padding: 14px 22px;
@@ -1020,6 +1043,7 @@ button:focus-visible {
     font-size: 14px;
 }
 
+/* ===== KARTU VISI & MISI SEKOLAH ===== */
 .vm-card {
     background: var(--white);
     border-radius: var(--radius-lg);
@@ -1082,6 +1106,7 @@ button:focus-visible {
     }
 }
 
+/* ===== TABEL DATA SISWA / PROFIL SEKOLAH & BADGE AKREDITASI ===== */
 .table-profil-wrap {
     background: var(--white);
     border-radius: var(--radius-lg);
@@ -1152,6 +1177,7 @@ button:focus-visible {
     font-size: 14px;
 }
 
+/* ===== KARTU PROFIL GURU ===== */
 .card-guru {
     background: var(--white);
     border-radius: var(--radius-lg);
@@ -1207,6 +1233,7 @@ button:focus-visible {
     margin: 0;
 }
 
+/* ===== SEKSI AJAKAN BERTINDAK (CTA) SEBELUM FOOTER ===== */
 .cta-section {
     background: var(--navy-900);
     color: var(--white);
@@ -1222,6 +1249,7 @@ button:focus-visible {
     margin-bottom: 28px;
 }
 
+/* ===== FOOTER — IDENTITAS SEKOLAH, DESKRIPSI & TAUTAN CEPAT ===== */
 .footer-school {
     background: var(--navy-900);
     color: rgba(255, 255, 255, 0.75);
@@ -1326,6 +1354,7 @@ button:focus-visible {
     align-items: center;
 }
 
+/* ===== IKON SOSIAL MEDIA DI FOOTER ===== */
 .footer-social {
     display: flex;
     justify-content: center;
@@ -1348,6 +1377,7 @@ button:focus-visible {
     transform: translateY(-3px);
 }
 
+/* ===== GARIS PEMISAH & TEKS HAK CIPTA DI FOOTER ===== */
 .footer-divider {
     border-color: rgba(255, 255, 255, 0.12);
     margin: 40px 0 20px;
@@ -1357,6 +1387,7 @@ button:focus-visible {
     color: rgba(255, 255, 255, 0.5);
 }
 
+/* ===== TOMBOL KEMBALI KE ATAS (BACK TO TOP) ===== */
 .back-to-top {
     position: fixed;
     bottom: 26px;
@@ -1387,6 +1418,7 @@ button:focus-visible {
     color: var(--navy-900);
 }
 
+/* ===== FILTER KATEGORI PADA HALAMAN GALERI FOTO ===== */
 .galeri-filter {
     display: flex;
     flex-wrap: wrap;
@@ -1426,6 +1458,7 @@ button:focus-visible {
     display: none;
 }
 
+/* ===== LIGHTBOX — POPUP PRATINJAU FOTO GALERI ===== */
 .lightbox-overlay {
     position: fixed;
     inset: 0;
@@ -1490,6 +1523,7 @@ button:focus-visible {
     transform: rotate(90deg);
 }
 
+/* ===== RESPONSIVE — TABLET & LAYAR SEDANG (MAKS 991PX) ===== */
 @media (max-width: 991px) {
     .navbar-collapse {
         background: var(--white);
@@ -1547,6 +1581,7 @@ button:focus-visible {
     }
 }
 
+/* ===== RESPONSIVE — LAYAR HP KECIL (MAKS 575PX) ===== */
 @media (max-width: 575px) {
     .hero-stats-bar {
         grid-template-columns: 1fr 1fr;
@@ -1577,6 +1612,7 @@ button:focus-visible {
     }
 }
 
+/* ===== AKSESIBILITAS — KURANGI ANIMASI (PREFERS-REDUCED-MOTION) ===== */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -1588,6 +1624,7 @@ button:focus-visible {
     }
 }
 
+/* ===== TOMBOL DAFTAR EKSTRAKURIKULER ===== */
 .btn-daftar-eskul {
     background: var(--navy-700);
     color: var(--white);
@@ -1608,6 +1645,7 @@ button:focus-visible {
     color: var(--navy-700);
 }
 
+/* ===== TOMBOL ANIMASI PANAH (ANIMATED BUTTON) & VARIAN OUTLINE/GALERI ===== */
 .animated-button {
     --btn-accent: var(--gold-500);
     --btn-hover-text: var(--navy-900);
@@ -1701,6 +1739,7 @@ button:focus-visible {
     width: 400px;
 }
 
+/* ===== PAGINASI DAFTAR BERITA ===== */
 .pagination .page-link {
     color: var(--navy-900);
     border-color: var(--cream-200);
@@ -1856,6 +1895,7 @@ button:focus-visible {
     border-radius: 6px;
 }
 
+/* ===== RESPONSIVE COVERFLOW JURUSAN — TABLET (MAKS 767PX) ===== */
 @media (max-width: 767px) {
     .coverflow-stage {
         height: 540px;
@@ -1872,6 +1912,7 @@ button:focus-visible {
     }
 }
 
+/* ===== RESPONSIVE COVERFLOW JURUSAN — HP KECIL (MAKS 480PX) ===== */
 @media (max-width: 480px) {
     .coverflow-stage {
         height: 480px;
@@ -1897,6 +1938,7 @@ button:focus-visible {
     }
 }
 
+/* ===== AKSESIBILITAS COVERFLOW — KURANGI ANIMASI ===== */
 @media (prefers-reduced-motion: reduce) {
     .coverflow-item {
         transition: opacity 0.3s ease !important;

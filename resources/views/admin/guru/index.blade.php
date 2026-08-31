@@ -4,6 +4,7 @@
 
 @section('content')
 
+{{-- JUDUL HALAMAN & TOMBOL AKSI --}}
 <div class="admin-page-header">
     <h1>Kelola Guru</h1>
     <a href="{{ route('admin.guru.create') }}" class="btn-admin btn-admin-primary">
@@ -11,6 +12,7 @@
     </a>
 </div>
 
+{{-- TABEL DAFTAR GURU --}}
 <div class="admin-panel">
     @if($guru->count())
         <table class="admin-table">

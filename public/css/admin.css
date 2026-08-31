@@ -1,3 +1,4 @@
+/* VARIABEL WARNA PANEL ADMIN */
 :root {
     --admin-navy: #14213d;
     --admin-navy-light: #1b2a4a;
@@ -7,10 +8,12 @@
     --admin-text-muted: #6b7280;
 }
 
+/* RESET DASAR */
 * {
     box-sizing: border-box;
 }
 
+/* GAYA DASAR BODY & HEADING ADMIN */
 body {
     font-family: "Plus Jakarta Sans", sans-serif;
     background: var(--admin-bg);
@@ -26,6 +29,7 @@ h6 {
     font-family: "Fraunces", serif;
 }
 
+/* LAYOUT UTAMA ADMIN (WRAPPER SIDEBAR + KONTEN) */
 .admin-wrapper {
     display: flex;
     min-height: 100vh;
@@ -144,6 +148,7 @@ h6 {
     min-width: 0;
 }
 
+/* TOPBAR (HEADER ATAS PANEL ADMIN) */
 .admin-topbar {
     background: #fff;
     border-bottom: 1px solid var(--admin-border);
@@ -172,10 +177,12 @@ h6 {
     color: var(--admin-gold);
 }
 
+/* AREA KONTEN UTAMA ADMIN */
 .admin-main {
     padding: 28px;
 }
 
+/* HEADER JUDUL HALAMAN ADMIN */
 .admin-page-header {
     display: flex;
     align-items: center;
@@ -249,6 +256,7 @@ h6 {
     margin: 0;
 }
 
+/* PANEL/KARTU PEMBUNGKUS KONTEN (TABEL, FORM, DLL) */
 .admin-panel {
     background: #fff;
     border-radius: 16px;
@@ -271,6 +279,7 @@ h6 {
     padding: 24px;
 }
 
+/* TABEL DATA ADMIN */
 .admin-table {
     width: 100%;
     border-collapse: collapse;
@@ -305,6 +314,7 @@ h6 {
     border-radius: 8px;
 }
 
+/* TOMBOL AKSI ADMIN (VARIAN WARNA & UKURAN) */
 .btn-admin {
     display: inline-flex;
     align-items: center;
@@ -355,11 +365,13 @@ h6 {
     background: var(--admin-bg);
 }
 
+/* GRUP TOMBOL AKSI (EDIT/HAPUS) DI TABEL */
 .action-group {
     display: flex;
     gap: 6px;
 }
 
+/* FORM INPUT ADMIN (TAMBAH/EDIT DATA) */
 .admin-form-label {
     font-weight: 600;
     color: var(--admin-navy);
@@ -401,6 +413,7 @@ textarea.admin-form-control {
     border: 1px solid var(--admin-border);
 }
 
+/* BADGE STATUS */
 .badge-status {
     display: inline-flex;
     padding: 4px 12px;
@@ -409,6 +422,7 @@ textarea.admin-form-control {
     font-weight: 600;
 }
 
+/* TAMPILAN KOSONG (BELUM ADA DATA) */
 .empty-state {
     text-align: center;
     padding: 60px 20px;
@@ -421,6 +435,7 @@ textarea.admin-form-control {
     display: block;
 }
 
+/* RESPONSIVE — SIDEBAR & TABEL DI LAYAR KECIL (MAKS 900PX) */
 @media (max-width: 900px) {
     .admin-sidebar {
         transform: translateX(-100%);

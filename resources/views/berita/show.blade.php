@@ -4,6 +4,7 @@
 
 @section('content')
 
+{{-- HEADER JUDUL HALAMAN: TANGGAL & JUDUL BERITA --}}
 <section class="page-header">
     <div class="container" data-aos="fade-up">
         <div class="text-center">
@@ -13,6 +14,7 @@
     </div>
 </section>
 
+{{-- ISI LENGKAP BERITA --}}
 <section class="section-block">
     <div class="container">
         <div class="row justify-content-center">
@@ -29,6 +31,7 @@
             </div>
         </div>
 
+        {{-- REKOMENDASI BERITA LAIN --}}
         @if($beritaLain->count())
             <div class="section-heading mt-5 pt-5" data-aos="fade-up">
                 <span class="eyebrow">Baca Juga</span>

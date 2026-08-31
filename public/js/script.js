@@ -1,3 +1,4 @@
+// ===== INISIALISASI LIBRARY ANIMASI SCROLL (AOS) =====
 document.addEventListener("DOMContentLoaded", function () {
     if (typeof AOS !== "undefined") {
         AOS.init({
@@ -8,10 +9,12 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // ===== NAVBAR: EFEK LATAR SAAT DI-SCROLL & TOMBOL "KEMBALI KE ATAS" =====
     const navbar = document.getElementById("mainNavbar");
     const backToTop = document.querySelector(".back-to-top");
     let footerVisible = false;
 
+    // Ubah tampilan navbar & tombol back-to-top berdasarkan posisi scroll
     function handleScroll() {
         const scrolled = window.scrollY > 40;
         if (navbar) navbar.classList.toggle("scrolled", scrolled);
@@ -22,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
             );
     }
 
+    // Sembunyikan tombol back-to-top saat footer sudah terlihat di layar
     const footerEl = document.getElementById("kontak");
     if (footerEl && backToTop && "IntersectionObserver" in window) {
         const footerObserver = new IntersectionObserver(
@@ -39,6 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", handleScroll);
     handleScroll();
 
+    // ===== SCROLL HALUS (SMOOTH SCROLL) UNTUK LINK ANCHOR (#id) =====
     document.querySelectorAll('a[href^="#"]').forEach(function (link) {
         link.addEventListener("click", function (e) {
             const targetId = this.getAttribute("href");
@@ -61,6 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    // Klik tombol back-to-top -> scroll halus ke paling atas halaman
     if (backToTop) {
         backToTop.addEventListener("click", function (e) {
             e.preventDefault();
@@ -68,9 +74,11 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // ===== ANIMASI HITUNG NAIK (COUNTER) UNTUK ANGKA STATISTIK =====
     const counters = document.querySelectorAll(".counter");
 
     if (counters.length && "IntersectionObserver" in window) {
+        // Jalankan animasi hitung naik dari 0 sampai nilai data-target
         const runCounter = function (el) {
             const target = parseInt(el.getAttribute("data-target"), 10) || 0;
             const duration = 1500;
@@ -91,6 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
             requestAnimationFrame(tick);
         };
 
+        // Mulai animasi counter begitu elemen terlihat di layar (sekali saja)
         const counterObserver = new IntersectionObserver(
             function (entries, observer) {
                 entries.forEach(function (entry) {
@@ -113,12 +122,14 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // ===== LIGHTBOX GALERI FOTO (POPUP PRATINJAU GAMBAR) =====
     const lightboxOverlay = document.getElementById("lightboxOverlay");
     const lightboxImage = document.getElementById("lightboxImage");
     const lightboxCaption = document.getElementById("lightboxCaption");
     const lightboxClose = document.getElementById("lightboxClose");
     const lightboxTriggers = document.querySelectorAll("[data-lightbox]");
 
+    // Tampilkan lightbox dengan gambar & keterangan yang dipilih
     function openLightbox(imgSrc, caption) {
         if (!lightboxOverlay) return;
         lightboxImage.src = imgSrc;
@@ -128,12 +139,14 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.style.overflow = "hidden";
     }
 
+    // Tutup lightbox yang sedang terbuka
     function closeLightbox() {
         if (!lightboxOverlay) return;
         lightboxOverlay.classList.remove("active");
         document.body.style.overflow = "";
     }
 
+    // Buka lightbox saat foto galeri (elemen data-lightbox) diklik
     lightboxTriggers.forEach(function (trigger) {
         trigger.addEventListener("click", function () {
             openLightbox(
@@ -143,6 +156,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    // Tutup lightbox lewat tombol close, klik di luar gambar, atau tombol Escape
     if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
 
     if (lightboxOverlay) {
@@ -155,10 +169,12 @@ document.addEventListener("DOMContentLoaded", function () {
         if (e.key === "Escape") closeLightbox();
     });
 
+    // ===== FILTER KATEGORI GALERI FOTO =====
     const filterButtons = document.querySelectorAll(".filter-btn");
     const galeriItems = document.querySelectorAll(".galeri-item");
     const galeriEmptyState = document.getElementById("galeriEmptyState");
 
+    // Tampilkan/sembunyikan item galeri sesuai kategori yang dipilih
     if (filterButtons.length && galeriItems.length) {
         filterButtons.forEach(function (btn) {
             btn.addEventListener("click", function () {
@@ -187,10 +203,13 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
     }
+
+    // ===== TAMPIL/SEMBUNYIKAN PASSWORD DI FORM LOGIN =====
     const togglePassword = document.getElementById("togglePassword");
     const passwordInput = document.getElementById("passwordInput");
     const toggleIcon = document.getElementById("toggleIcon");
 
+    // Ubah tipe input password <-> text saat ikon mata diklik
     if (togglePassword && passwordInput && toggleIcon) {
         togglePassword.addEventListener("click", function () {
             const isHidden = passwordInput.type === "password";
@@ -200,8 +219,10 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // ===== TOMBOL "LIHAT SELENGKAPNYA" DAFTAR GURU =====
     const btnGuruMore = document.getElementById("btnGuruMore");
 
+    // Tampilkan/sembunyikan kartu guru tambahan saat tombol diklik
     if (btnGuruMore) {
         btnGuruMore.addEventListener("click", function () {
             const isExpanding =
@@ -224,10 +245,12 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // ===== EFEK SOROTAN (SPOTLIGHT) MENGIKUTI KURSOR/SENTUHAN DI HERO =====
     const heroSection = document.querySelector(".hero");
     const heroSpotlight = document.getElementById("heroSpotlight");
 
     if (heroSection && heroSpotlight) {
+        // Pindahkan posisi titik sorotan mengikuti koordinat kursor/sentuhan
         function moveSpotlight(clientX, clientY) {
             const rect = heroSection.getBoundingClientRect();
             const x = ((clientX - rect.left) / rect.width) * 100;
@@ -260,6 +283,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // ===== CAROUSEL COVERFLOW JURUSAN (KARTU 3D BERTUMPUK) =====
     const coverflowTrack = document.getElementById("coverflowTrack");
 
     if (coverflowTrack) {
@@ -275,6 +299,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let active = 0;
 
+        // Tentukan breakpoint layar (xs/sm/md) untuk menyesuaikan ukuran carousel
         function getBreakpoint() {
             const w = window.innerWidth;
             if (w <= 480) return "xs";
@@ -288,6 +313,7 @@ document.addEventListener("DOMContentLoaded", function () {
             md: { spacing: 280, rotate: 32, depth: 180, scaleStep: 0.14 },
         };
 
+        // Hitung jarak indeks terpendek antar kartu (mendukung perputaran melingkar)
         function shortestDiff(i, from) {
             let diff = i - from;
             if (diff > total / 2) diff -= total;
@@ -297,6 +323,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const VISIBLE_RANGE = 1;
 
+        // Gambar ulang posisi, rotasi, skala & opacity tiap kartu carousel
         function render() {
             const cfg = settings[getBreakpoint()];
 
@@ -333,11 +360,13 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
 
+        // Pindah kartu aktif ke index tertentu lalu render ulang tampilan
         function goTo(index) {
             active = ((index % total) + total) % total;
             render();
         }
 
+        // Klik pada kartu carousel -> pindahkan kartu tersebut menjadi aktif
         coverflowTrack.addEventListener("click", function (e) {
             const clickX = e.clientX;
             const clickY = e.clientY;
@@ -367,12 +396,14 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
+        // Klik titik indikator (dots) -> pindah ke kartu sesuai indikator
         dots.forEach(function (dot, i) {
             dot.addEventListener("click", function () {
                 goTo(i);
             });
         });
 
+        // Navigasi carousel dengan tombol panah kiri/kanan pada keyboard
         if (stage) {
             stage.setAttribute("tabindex", "0");
             stage.addEventListener("keydown", function (e) {
@@ -382,6 +413,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // Swipe untuk mobile/tablet
+
+        // Navigasi carousel dengan gesture geser (swipe) di layar sentuh
         let touchStartX = 0;
         coverflowTrack.addEventListener(
             "touchstart",
@@ -401,6 +434,7 @@ document.addEventListener("DOMContentLoaded", function () {
             { passive: true },
         );
 
+        // Render ulang carousel saat ukuran jendela berubah (debounced)
         let resizeTimer;
         window.addEventListener("resize", function () {
             clearTimeout(resizeTimer);
@@ -410,3 +444,20 @@ document.addEventListener("DOMContentLoaded", function () {
         render();
     }
 });
+
+function confirmDelete(id, nama) {
+    Swal.fire({
+        title: "Hapus data ini?",
+        text: `"${nama}" akan dihapus permanen dan tidak bisa dikembalikan.`,
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#d33",
+        cancelButtonColor: "#6c757d",
+        confirmButtonText: "Ya, hapus",
+        cancelButtonText: "Batal",
+    }).then((result) => {
+        if (result.isConfirmed) {
+            document.getElementById("delete-form-" + id).submit();
+        }
+    });
+}

@@ -9,6 +9,7 @@
     <a href="{{ route('admin.jurusan.index') }}" class="btn-admin btn-admin-outline"><i class="bi bi-arrow-left"></i> Kembali</a>
 </div>
 
+{{-- FORM EDIT DATA UTAMA JURUSAN --}}
 <div class="admin-panel">
     <div class="admin-panel-header">Data Jurusan</div>
     <div class="admin-panel-body">
@@ -21,6 +22,7 @@
     </div>
 </div>
 
+{{-- PENGELOLAAN GALERI FOTO KHUSUS JURUSAN INI --}}
 <div class="admin-panel">
     <div class="admin-panel-header">
         Galeri Foto {{ $jurusan->singkatan }}

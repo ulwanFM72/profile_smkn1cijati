@@ -8,12 +8,20 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+    /**
+     * Alihkan pengunjung yang mengakses halaman login ke beranda,
+     * dengan pesan bahwa mereka harus login lebih dulu untuk masuk admin.
+     */
     public function showLogin()
     {
         return redirect()->route('home')
             ->with('login_required', 'Silakan login terlebih dahulu untuk mengakses halaman admin.');
     }
 
+    /**
+     * Proses percobaan login admin: validasi kredensial, autentikasi,
+     * lalu arahkan ke dashboard jika berhasil atau kembali dengan pesan error jika gagal.
+     */
     public function authenticate(Request $request)
     {
         $credentials = $request->validate([
@@ -32,6 +40,9 @@ class LoginController extends Controller
             ->onlyInput('username');
     }
 
+    /**
+     * Proses logout admin: hapus sesi login dan alihkan kembali ke beranda.
+     */
     public function logout(Request $request)
     {
         Auth::logout();

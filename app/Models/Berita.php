@@ -24,6 +24,9 @@ class Berita extends Model
         'tanggal' => 'date',
     ];
 
+    /**
+     * Gunakan kolom slug (bukan id) sebagai kunci untuk route model binding.
+     */
     public function getRouteKeyName(): string
     {
         return 'slug';

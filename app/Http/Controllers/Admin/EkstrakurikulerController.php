@@ -24,6 +24,9 @@ class EkstrakurikulerController extends Controller
         ];
     }
 
+    /**
+     * Pesan error kustom (Bahasa Indonesia) untuk aturan validasi di rules() di atas.
+     */
     private function messages(): array
     {
         return [
@@ -34,6 +37,9 @@ class EkstrakurikulerController extends Controller
         ];
     }
 
+    /**
+     * Tampilkan daftar seluruh ekstrakurikuler di panel admin, terurut berdasarkan nama.
+     */
     public function index()
     {
         $ekstrakurikuler = Ekstrakurikuler::orderBy('nama')->get();
@@ -41,11 +47,17 @@ class EkstrakurikulerController extends Controller
         return view('admin.ekstrakurikuler.index', compact('ekstrakurikuler'));
     }
 
+    /**
+     * Tampilkan form tambah ekstrakurikuler baru.
+     */
     public function create()
     {
         return view('admin.ekstrakurikuler.create');
     }
 
+    /**
+     * Simpan ekstrakurikuler baru: validasi input, unggah gambar (jika ada), lalu simpan ke database.
+     */
     public function store(Request $request)
     {
         $validated = $request->validate($this->rules(), $this->messages());
@@ -59,11 +71,17 @@ class EkstrakurikulerController extends Controller
         return redirect()->route('admin.ekstrakurikuler.index')->with('success', 'Ekstrakurikuler berhasil ditambahkan.');
     }
 
+    /**
+     * Tampilkan form edit untuk satu ekstrakurikuler.
+     */
     public function edit(Ekstrakurikuler $ekstrakurikuler)
     {
         return view('admin.ekstrakurikuler.edit', compact('ekstrakurikuler'));
     }
 
+    /**
+     * Perbarui data ekstrakurikuler: validasi input, ganti gambar lama dengan yang baru jika diunggah, lalu simpan.
+     */
     public function update(Request $request, Ekstrakurikuler $ekstrakurikuler)
     {
         $validated = $request->validate($this->rules(), $this->messages());
@@ -80,6 +98,9 @@ class EkstrakurikulerController extends Controller
         return redirect()->route('admin.ekstrakurikuler.index')->with('success', 'Ekstrakurikuler berhasil diperbarui.');
     }
 
+    /**
+     * Hapus satu ekstrakurikuler beserta file gambarnya (jika ada) dari penyimpanan.
+     */
     public function destroy(Ekstrakurikuler $ekstrakurikuler)
     {
         if ($ekstrakurikuler->gambar) {

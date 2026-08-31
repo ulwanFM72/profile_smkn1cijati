@@ -21,6 +21,9 @@ class GuruController extends Controller
         ];
     }
 
+    /**
+     * Pesan error kustom (Bahasa Indonesia) untuk aturan validasi di rules() di atas.
+     */
     private function messages(): array
     {
         return [
@@ -29,6 +32,9 @@ class GuruController extends Controller
         ];
     }
 
+    /**
+     * Tampilkan daftar seluruh guru di panel admin, terurut berdasarkan nama.
+     */
     public function index()
     {
         $guru = Guru::orderBy('nama')->get();
@@ -36,11 +42,17 @@ class GuruController extends Controller
         return view('admin.guru.index', compact('guru'));
     }
 
+    /**
+     * Tampilkan form tambah data guru baru.
+     */
     public function create()
     {
         return view('admin.guru.create');
     }
 
+    /**
+     * Simpan data guru baru: validasi input, unggah foto (jika ada), lalu simpan ke database.
+     */
     public function store(Request $request)
     {
         $validated = $request->validate($this->rules(), $this->messages());
@@ -54,11 +66,17 @@ class GuruController extends Controller
         return redirect()->route('admin.guru.index')->with('success', 'Data guru berhasil ditambahkan.');
     }
 
+    /**
+     * Tampilkan form edit untuk satu data guru.
+     */
     public function edit(Guru $guru)
     {
         return view('admin.guru.edit', compact('guru'));
     }
 
+    /**
+     * Perbarui data guru: validasi input, ganti foto lama dengan yang baru jika diunggah, lalu simpan.
+     */
     public function update(Request $request, Guru $guru)
     {
         $validated = $request->validate($this->rules(), $this->messages());
@@ -75,6 +93,9 @@ class GuruController extends Controller
         return redirect()->route('admin.guru.index')->with('success', 'Data guru berhasil diperbarui.');
     }
 
+    /**
+     * Hapus satu data guru beserta file fotonya (jika ada) dari penyimpanan.
+     */
     public function destroy(Guru $guru)
     {
         if ($guru->foto) {

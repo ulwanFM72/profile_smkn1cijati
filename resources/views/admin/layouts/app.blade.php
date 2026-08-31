@@ -26,6 +26,7 @@
                 </div>
             </div>
 
+            {{-- DAFTAR MENU NAVIGASI SIDEBAR ADMIN --}}
             <p class="admin-sidebar-label">Menu</p>
             <nav class="admin-sidebar-nav">
                 <a href="{{ route('admin.dashboard') }}" class="{{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
@@ -51,6 +52,7 @@
                 </a>
             </nav>
 
+            {{-- TOMBOL LOGOUT ADMIN --}}
             <form method="POST" action="{{ route('admin.logout') }}" class="admin-sidebar-logout">
                 @csrf
                 <button type="submit"><i class="bi bi-box-arrow-right"></i> Keluar</button>
@@ -59,6 +61,7 @@
 
         {{-- KONTEN --}}
         <div class="admin-content">
+            {{-- TOPBAR (TOMBOL BUKA SIDEBAR DI MOBILE & NAMA ADMIN YANG LOGIN) --}}
             <header class="admin-topbar">
                 <button class="admin-sidebar-toggle" id="sidebarToggle" aria-label="Buka menu">
                     <i class="bi bi-list"></i>
@@ -68,12 +71,20 @@
                 </div>
             </header>
 
+            {{-- AREA KONTEN UTAMA: NOTIFIKASI SUKSES/ERROR LALU KONTEN TIAP HALAMAN ADMIN --}}
             <main class="admin-main">
                 @if(session('success'))
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        {{ session('success') }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                    </div>
+                <script>
+                    Swal.fire({
+                        toast: true,
+                        position: 'top-end',
+                        icon: 'success',
+                        title: @json(session('success')),
+                        showConfirmButton: false,
+                        timer: 2500,
+                        timerProgressBar: true
+                    });
+                </script>
                 @endif
 
                 @if($errors->any())
@@ -93,11 +104,13 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    {{-- TOMBOL BUKA/TUTUP SIDEBAR DI LAYAR MOBILE --}}
     <script>
         document.getElementById('sidebarToggle')?.addEventListener('click', function () {
             document.querySelector('.admin-wrapper').classList.toggle('sidebar-open');
         });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @yield('scripts')
 </body>
 </html>

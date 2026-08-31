@@ -10,6 +10,9 @@ use Illuminate\Support\Facades\Storage;
 
 class BeritaController extends Controller
 {
+    /**
+     * Tampilkan daftar seluruh berita di panel admin, terbaru lebih dulu.
+     */
     public function index()
     {
         $berita = Berita::orderByDesc('tanggal')->get();
@@ -17,11 +20,17 @@ class BeritaController extends Controller
         return view('admin.berita.index', compact('berita'));
     }
 
+    /**
+     * Tampilkan form tambah berita baru.
+     */
     public function create()
     {
         return view('admin.berita.create');
     }
 
+    /**
+     * Simpan berita baru: validasi input, buat slug unik, unggah gambar (jika ada), lalu simpan ke database.
+     */
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -43,11 +52,17 @@ class BeritaController extends Controller
         return redirect()->route('admin.berita.index')->with('success', 'Berita berhasil ditambahkan.');
     }
 
+    /**
+     * Tampilkan form edit untuk satu berita.
+     */
     public function edit(Berita $berita)
     {
         return view('admin.berita.edit', compact('berita'));
     }
 
+    /**
+     * Perbarui data berita: validasi input, ganti gambar lama dengan yang baru jika diunggah, lalu simpan.
+     */
     public function update(Request $request, Berita $berita)
     {
         $validated = $request->validate([
@@ -70,6 +85,9 @@ class BeritaController extends Controller
         return redirect()->route('admin.berita.index')->with('success', 'Berita berhasil diperbarui.');
     }
 
+    /**
+     * Hapus satu berita beserta file gambarnya (jika ada) dari penyimpanan.
+     */
     public function destroy(Berita $berita)
     {
         if ($berita->gambar) {

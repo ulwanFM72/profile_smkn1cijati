@@ -9,6 +9,10 @@ use Symfony\Component\HttpFoundation\Response;
 
 class EnsureIsAdmin
 {
+    /**
+     * Pastikan hanya pengguna yang sudah login yang bisa mengakses halaman admin.
+     * Jika belum login, alihkan ke beranda dengan pesan agar login terlebih dahulu.
+     */
     public function handle(Request $request, Closure $next): Response
     {
         if (! Auth::check()) {

@@ -6,6 +6,9 @@ use App\Models\Galeri;
 
 class GaleriController extends Controller
 {
+    /**
+     * Tampilkan halaman galeri publik beserta daftar kategori foto yang tersedia.
+     */
     public function index()
     {
         $galeri = Galeri::latest()->get();

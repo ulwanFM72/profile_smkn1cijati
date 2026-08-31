@@ -4,6 +4,7 @@
 
 @section('content')
 
+{{-- HEADER JUDUL HALAMAN --}}
 <section class="page-header">
     <div class="container text-center" data-aos="fade-up">
         <h1>Ekstrakurikuler</h1>
@@ -11,8 +12,9 @@
     </div>
 </section>
 
+{{-- TOMBOL DAFTAR EKSTRAKURIKULER & DAFTAR SELURUH EKSTRAKURIKULER --}}
 <section class="section-block">
-    <button class="btn-daftar-eskul" onclick="window.open('https://reg-eskul.smkn1cijati.sch.id/', '_blank')">Daftar Ekstrakurikuler Disini</button>
+    <button class="btn-daftar-eskul" onclick="window.open('https://reg-eskul.smkn1cijati.sch.id/', '_blank')">Daftar Ekstrakurikuler Di Sini</button>
     <div class="container">
         <div class="row g-4">
             @forelse($ekstrakurikuler as $index => $ekskul)

@@ -13,6 +13,10 @@ use App\Models\ProfilSekolah;
 
 class DashboardController extends Controller
 {
+    /**
+     * Tampilkan halaman dashboard admin: ringkasan jumlah data (berita, galeri,
+     * ekstrakurikuler, jurusan, guru, siswa, kelas) beserta 5 berita terbaru.
+     */
     public function index()
     {
         $totalBerita = Berita::count();

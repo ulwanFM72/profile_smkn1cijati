@@ -4,6 +4,7 @@
 
 @section('content')
 
+{{-- HEADER JUDUL HALAMAN --}}
 <section class="page-header">
     <div class="container text-center" data-aos="fade-up">
         <h1>Galeri Kegiatan</h1>
@@ -14,6 +15,7 @@
 <section class="section-block">
     <div class="container">
 
+        {{-- FILTER KATEGORI FOTO (DITANGANI OLEH script.js) --}}
         @if($kategori->count())
             <div class="galeri-filter" data-aos="fade-up">
                 <button type="button" class="filter-btn active" data-filter="semua">Semua</button>
@@ -23,6 +25,7 @@
             </div>
         @endif
 
+        {{-- GRID FOTO GALERI (SETIAP FOTO BISA DIBUKA DI LIGHTBOX) --}}
         <div class="row g-4" id="galeriGrid">
             @forelse($galeri as $index => $foto)
                 <div class="col-6 col-md-4 col-lg-3 galeri-item" data-kategori="{{ Str::slug($foto->kategori ?? '') }}" data-aos="zoom-in" data-aos-delay="{{ ($index % 8) * 60 }}">
@@ -45,6 +48,7 @@
             @endforelse
         </div>
 
+        {{-- PESAN KOSONG SAAT FILTER TIDAK MENEMUKAN FOTO --}}
         <div class="text-center py-5 d-none" id="galeriEmptyState">
             <i class="bi bi-emoji-frown display-4 text-muted"></i>
             <p class="mt-3 text-body-muted">Tidak ada foto untuk kategori ini.</p>

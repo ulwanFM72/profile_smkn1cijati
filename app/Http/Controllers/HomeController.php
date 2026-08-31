@@ -11,6 +11,10 @@ use App\Models\Siswa;
 
 class HomeController extends Controller
 {
+    /**
+     * Tampilkan halaman beranda: profil sekolah, cuplikan ekstrakurikuler/galeri/berita,
+     * serta ringkasan jumlah ekstrakurikuler, guru, dan siswa.
+     */
     public function index()
     {
         $profil = ProfilSekolah::first();

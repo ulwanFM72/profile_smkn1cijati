@@ -4,6 +4,7 @@
 
 @section('content')
 
+{{-- HEADER JUDUL HALAMAN --}}
 <section class="page-header">
     <div class="container text-center" data-aos="fade-up">
         <h1>Profil Sekolah</h1>
@@ -11,6 +12,7 @@
     </div>
 </section>
 
+{{-- SEJARAH SINGKAT, SAMBUTAN KEPALA SEKOLAH, VISI & MISI --}}
 <section class="section-block">
     <div class="container">
         <div class="row gy-5 align-items-start">
@@ -45,6 +47,7 @@
     </div>
 </section>
 
+{{-- TABEL INFORMASI PROFIL SEKOLAH (NPSN, STATUS, AKREDITASI, KONTAK, DLL) --}}
 <section class="section-block bg-soft">
     <div class="container">
         <div class="section-heading" data-aos="fade-up">
@@ -118,6 +121,7 @@
     </div>
 </section>
 
+{{-- DAFTAR GURU & STAF PENGAJAR (DENGAN TOMBOL "LIHAT SELENGKAPNYA") --}}
 <section class="section-block">
     <div class="container">
         <div class="section-heading" data-aos="fade-up">
@@ -157,6 +161,7 @@
     </div>
 </section>
 
+{{-- TABEL REKAP JUMLAH SISWA PER ANGKATAN & JURUSAN (HANYA TAMPIL JIKA ADA DATA) --}}
 @if($totalSiswa > 0)
 <section class="section-block bg-soft">
     <div class="container">
@@ -220,6 +225,7 @@
 </section>
 @endif
 
+{{-- RINGKASAN STATISTIK SEKOLAH (TAHUN BERDIRI, SISWA, GURU, LOKASI) --}}
 <section class="section-block">
     <div class="container">
         <div class="row g-4 text-center">

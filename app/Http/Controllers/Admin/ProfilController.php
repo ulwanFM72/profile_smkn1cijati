@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class ProfilController extends Controller
 {
+    /**
+     * Tampilkan form edit profil sekolah. Jika data profil belum ada, buat data
+     * default terlebih dahulu agar form selalu punya sesuatu untuk ditampilkan.
+     */
     public function edit()
     {
         $profil = ProfilSekolah::firstOrCreate([], ['nama_sekolah' => 'Nama Sekolah']);
@@ -15,6 +19,10 @@ class ProfilController extends Controller
         return view('admin.profil.edit', compact('profil'));
     }
 
+    /**
+     * Perbarui data profil sekolah: validasi seluruh input (identitas, kontak,
+     * sosial media, dsb.) lalu simpan ke database.
+     */
     public function update(Request $request)
     {
         $profil = ProfilSekolah::firstOrCreate([], ['nama_sekolah' => 'Nama Sekolah']);

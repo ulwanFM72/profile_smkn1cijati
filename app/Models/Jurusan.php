@@ -24,11 +24,17 @@ class Jurusan extends Model
         'icon',
     ];
 
+    /**
+     * Gunakan kolom slug (bukan id) sebagai kunci untuk route model binding.
+     */
     public function getRouteKeyName(): string
     {
         return 'slug';
     }
 
+    /**
+     * Relasi: satu jurusan memiliki banyak foto galeri (JurusanGaleri).
+     */
     public function galeri(): HasMany
     {
         return $this->hasMany(JurusanGaleri::class);

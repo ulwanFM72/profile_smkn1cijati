@@ -18,6 +18,9 @@ class JurusanGaleri extends Model
         'keterangan',
     ];
 
+    /**
+     * Relasi: setiap foto galeri jurusan dimiliki oleh satu jurusan.
+     */
     public function jurusan(): BelongsTo
     {
         return $this->belongsTo(Jurusan::class);

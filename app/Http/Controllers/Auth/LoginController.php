@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+    /**
+     * Proses percobaan login admin: validasi kredensial, autentikasi,
+     * lalu arahkan ke dashboard jika berhasil atau kembali dengan pesan error jika gagal.
+     */
     public function authenticate(Request $request)
     {
         $credentials = $request->validate([
@@ -26,6 +30,9 @@ class LoginController extends Controller
             ->onlyInput('username');
     }
 
+    /**
+     * Proses logout admin: hapus sesi login dan alihkan kembali ke beranda.
+     */
     public function logout(Request $request)
     {
         Auth::logout();

@@ -1,6 +1,7 @@
 <footer class="footer-school" id="kontak">
     <div class="container">
         <div class="row gy-5">
+            {{-- KOLOM KONTAK SEKOLAH --}}
             <div class="col-lg-4 col-md-6">
                 <div class="footer-col">
                     <h6 class="footer-title">Kontak</h6>
@@ -14,6 +15,7 @@
                 </div>
             </div>
 
+            {{-- KOLOM PETA LOKASI SEKOLAH --}}
             <div class="col-lg-4 col-md-6">
     <div class="footer-col footer-col-center">
         <h6 class="footer-title">Lokasi Sekolah</h6>
@@ -35,6 +37,7 @@
                 </div>
             </div>
 
+            {{-- KOLOM IKON SOSIAL MEDIA --}}
             <div class="col-lg-4 col-md-12">
                 <div class="footer-col footer-col-center">
                     <h6 class="footer-title">Ikuti Kami</h6>
@@ -57,6 +60,7 @@
 
         <hr class="footer-divider">
 
+        {{-- TEKS HAK CIPTA --}}
         <div class="text-center footer-copy">
             &copy; {{ date('Y') }} {{ $profil->nama_sekolah ?? 'SMK Negeri 1 Cijati' }}. Seluruh hak cipta dilindungi.
         </div>

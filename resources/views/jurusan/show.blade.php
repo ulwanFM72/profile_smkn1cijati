@@ -4,12 +4,14 @@
 
 @section('content')
 
+{{-- HEADER JUDUL HALAMAN --}}
 <section class="page-header">
     <div class="container text-center" data-aos="fade-up">
         <h1>{{ $jurusan->nama }}</h1>
     </div>
 </section>
 
+{{-- DESKRIPSI JURUSAN, KOMPETENSI YANG DIPELAJARI & KEPALA PROGRAM --}}
 <section class="section-block">
     <div class="container">
         <div class="row gy-5 align-items-start">
@@ -68,6 +70,7 @@
     </div>
 </section>
 
+{{-- GALERI FOTO KHUSUS JURUSAN INI --}}
 @if($jurusan->galeri->count())
 <section class="section-block bg-soft">
     <div class="container">

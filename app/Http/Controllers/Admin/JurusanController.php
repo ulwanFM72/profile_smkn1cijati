@@ -28,6 +28,9 @@ class JurusanController extends Controller
         ];
     }
 
+    /**
+     * Pesan error kustom (Bahasa Indonesia) untuk aturan validasi di rules() di atas.
+     */
     private function messages(): array
     {
         return [
@@ -38,6 +41,9 @@ class JurusanController extends Controller
         ];
     }
 
+    /**
+     * Tampilkan daftar seluruh jurusan di panel admin, lengkap dengan jumlah foto galerinya.
+     */
     public function index()
     {
         $jurusan = Jurusan::withCount('galeri')->orderBy('nama')->get();
@@ -45,11 +51,18 @@ class JurusanController extends Controller
         return view('admin.jurusan.index', compact('jurusan'));
     }
 
+    /**
+     * Tampilkan form tambah jurusan baru.
+     */
     public function create()
     {
         return view('admin.jurusan.create');
     }
 
+    /**
+     * Simpan jurusan baru: validasi input, buat slug dari singkatan, unggah foto sampul
+     * & foto kepala program (jika ada), lalu simpan ke database.
+     */
     public function store(Request $request)
     {
         $validated = $request->validate($this->rules(), $this->messages());
@@ -68,6 +81,9 @@ class JurusanController extends Controller
         return redirect()->route('admin.jurusan.index')->with('success', 'Jurusan berhasil ditambahkan.');
     }
 
+    /**
+     * Tampilkan form edit untuk satu jurusan beserta daftar foto galerinya.
+     */
     public function edit(Jurusan $jurusan)
     {
         $jurusan->load('galeri');
@@ -75,6 +91,10 @@ class JurusanController extends Controller
         return view('admin.jurusan.edit', compact('jurusan'));
     }
 
+    /**
+     * Perbarui data jurusan: validasi input, ganti foto sampul & foto kepala program
+     * lama dengan yang baru jika diunggah ulang, lalu simpan.
+     */
     public function update(Request $request, Jurusan $jurusan)
     {
         $validated = $request->validate($this->rules(), $this->messages());
@@ -98,6 +118,10 @@ class JurusanController extends Controller
         return redirect()->route('admin.jurusan.edit', $jurusan)->with('success', 'Jurusan berhasil diperbarui.');
     }
 
+    /**
+     * Hapus satu jurusan beserta seluruh foto galerinya, foto sampul, dan foto kepala program
+     * dari penyimpanan sebelum data jurusan dihapus dari database.
+     */
     public function destroy(Jurusan $jurusan)
     {
         foreach ($jurusan->galeri as $foto) {
@@ -115,8 +139,11 @@ class JurusanController extends Controller
         return redirect()->route('admin.jurusan.index')->with('success', 'Jurusan berhasil dihapus.');
     }
 
-    // --- Kelola galeri foto per jurusan ---
+    // ===== KELOLA GALERI FOTO KHUSUS PER JURUSAN =====
 
+    /**
+     * Tambahkan satu foto ke galeri milik sebuah jurusan.
+     */
     public function storeGaleri(Request $request, Jurusan $jurusan)
     {
         $request->validate([
@@ -134,6 +161,9 @@ class JurusanController extends Controller
         return redirect()->route('admin.jurusan.edit', $jurusan)->with('success', 'Foto galeri jurusan berhasil ditambahkan.');
     }
 
+    /**
+     * Hapus satu foto dari galeri milik sebuah jurusan, beserta file gambarnya.
+     */
     public function destroyGaleri(Jurusan $jurusan, JurusanGaleri $galeri)
     {
         Storage::disk('public')->delete($galeri->gambar);

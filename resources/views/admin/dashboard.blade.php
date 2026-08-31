@@ -4,10 +4,12 @@
 
 @section('content')
 
+{{-- JUDUL HALAMAN DASHBOARD --}}
 <div class="admin-page-header">
     <h1>Ringkasan</h1>
 </div>
 
+{{-- KARTU RINGKASAN JUMLAH DATA (BERITA, EKSKUL, JURUSAN, GALERI, GURU, SISWA, KELAS) --}}
 <div class="admin-stat-grid">
     <div class="admin-stat-card">
         <div class="admin-stat-icon icon-purple"><i class="bi bi-newspaper"></i></div>
@@ -60,6 +62,7 @@
     </a>
 </div>
 
+{{-- TABEL 5 BERITA TERBARU --}}
 <div class="admin-panel">
     <div class="admin-panel-header">
         Berita Terbaru

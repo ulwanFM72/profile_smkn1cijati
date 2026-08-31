@@ -4,6 +4,7 @@
 
 @section('content')
 
+{{-- JUDUL HALAMAN & TOMBOL AKSI --}}
 <div class="admin-page-header">
     <h1>Kelola Berita</h1>
     <a href="{{ route('admin.berita.create') }}" class="btn-admin btn-admin-primary">
@@ -11,6 +12,7 @@
     </a>
 </div>
 
+{{-- TABEL DAFTAR BERITA --}}
 <div class="admin-panel">
     @if($berita->count())
         <table class="admin-table">
@@ -39,10 +41,10 @@
                                 <a href="{{ route('admin.berita.edit', $item) }}" class="btn-admin btn-admin-outline btn-admin-sm">
                                     <i class="bi bi-pencil"></i> Edit
                                 </a>
-                                <form method="POST" action="{{ route('admin.berita.destroy', $item) }}" onsubmit="return confirm('Hapus berita ini?');">
+                                <form method="POST" action="{{ route('admin.berita.destroy', $item) }}" id="delete-form-{{ $item->id }}" class="delete-form">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn-admin btn-admin-danger btn-admin-sm">
+                                    <button type="button" class="btn-admin btn-admin-danger btn-admin-sm" onclick="confirmDelete('{{ $item->id }}', '{{ $item->judul }}')">
                                         <i class="bi bi-trash"></i> Hapus
                                     </button>
                                 </form>
