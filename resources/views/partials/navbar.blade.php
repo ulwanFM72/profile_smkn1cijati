@@ -29,26 +29,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ request()->routeIs('galeri') ? 'active' : '' }}" href="{{ route('galeri') }}">Galeri</a>
-                </li>
- 
-                {{-- TOMBOL LOGIN (PENGUNJUNG) ATAU LINK KE DASHBOARD (ADMIN YANG SUDAH LOGIN) --}}
-                @guest
-                    <li class="nav-item ms-lg-3">
-                        <button
-                            type="button"
-                            class="btn btn-nav-cta"
-                            data-bs-toggle="modal"
-                            data-bs-target="#loginModal">
-                            Login
-                        </button>
-                    </li>
-                @else
-                    <li class="nav-item ms-lg-3">
-                        <a class="btn btn-nav-cta" href="{{ route('admin.dashboard') }}">
-                            <i class="bi bi-speedometer2"></i> Dashboard
-                        </a>
-                    </li>
-                @endguest
+                </li>                    
             </ul>
         </div>
     </div>

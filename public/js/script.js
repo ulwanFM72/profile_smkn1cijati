@@ -245,31 +245,32 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // ===== EFEK SOROTAN (SPOTLIGHT) MENGIKUTI KURSOR/SENTUHAN DI HERO =====
-    const heroSection = document.querySelector(".hero");
-    const heroSpotlight = document.getElementById("heroSpotlight");
+    // ===== EFEK SOROTAN (SPOTLIGHT) MENGIKUTI KURSOR/SENTUHAN =====
+    // Fungsi umum: pasang efek sorotan pada sebuah container & elemen sorotannya.
+    // Dipakai untuk .hero (beranda) dan .page-header (profil, ekskul, jurusan, galeri, dll).
+    function initSpotlight(container, spotlight) {
+        if (!container || !spotlight) return;
 
-    if (heroSection && heroSpotlight) {
         // Pindahkan posisi titik sorotan mengikuti koordinat kursor/sentuhan
         function moveSpotlight(clientX, clientY) {
-            const rect = heroSection.getBoundingClientRect();
+            const rect = container.getBoundingClientRect();
             const x = ((clientX - rect.left) / rect.width) * 100;
             const y = ((clientY - rect.top) / rect.height) * 100;
-            heroSpotlight.style.setProperty("--spot-x", x + "%");
-            heroSpotlight.style.setProperty("--spot-y", y + "%");
-            heroSpotlight.classList.add("active");
+            spotlight.style.setProperty("--spot-x", x + "%");
+            spotlight.style.setProperty("--spot-y", y + "%");
+            spotlight.classList.add("active");
         }
 
         // Desktop: ikuti gerakan mouse
-        heroSection.addEventListener("mousemove", function (e) {
+        container.addEventListener("mousemove", function (e) {
             moveSpotlight(e.clientX, e.clientY);
         });
-        heroSection.addEventListener("mouseleave", function () {
-            heroSpotlight.classList.remove("active");
+        container.addEventListener("mouseleave", function () {
+            spotlight.classList.remove("active");
         });
 
         // Mobile/tablet: ikuti sentuhan jari
-        heroSection.addEventListener(
+        container.addEventListener(
             "touchmove",
             function (e) {
                 if (e.touches && e.touches[0]) {
@@ -278,10 +279,22 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             { passive: true },
         );
-        heroSection.addEventListener("touchend", function () {
-            heroSpotlight.classList.remove("active");
+        container.addEventListener("touchend", function () {
+            spotlight.classList.remove("active");
         });
     }
+
+    // Sorotan di hero beranda
+    initSpotlight(
+        document.querySelector(".hero"),
+        document.getElementById("heroSpotlight"),
+    );
+
+    // Sorotan di header halaman dalam (Profil, Ekstrakurikuler, Jurusan, Galeri, dll)
+    initSpotlight(
+        document.querySelector(".page-header"),
+        document.getElementById("pageHeaderSpotlight"),
+    );
 
     // ===== CAROUSEL COVERFLOW JURUSAN (KARTU 3D BERTUMPUK) =====
     const coverflowTrack = document.getElementById("coverflowTrack");

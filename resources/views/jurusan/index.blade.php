@@ -6,6 +6,7 @@
 
 {{-- HEADER JUDUL HALAMAN --}}
 <section class="page-header">
+    <div class="page-header-spotlight" id="pageHeaderSpotlight"></div>
     <div class="container text-center" data-aos="fade-up">
         <h1>Jurusan</h1>
         <p>{{ $jurusan->count() }} program keahlian yang tersedia untuk mempersiapkan siswa siap kerja, melanjutkan, atau berwirausaha.</p>

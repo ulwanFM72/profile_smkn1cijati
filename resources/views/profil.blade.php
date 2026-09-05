@@ -6,6 +6,7 @@
 
 {{-- HEADER JUDUL HALAMAN --}}
 <section class="page-header">
+    <div class="page-header-spotlight" id="pageHeaderSpotlight"></div>
     <div class="container text-center" data-aos="fade-up">
         <h1>Profil Sekolah</h1>
         <p>Mengenal lebih dekat sejarah, visi, dan misi kami.</p>

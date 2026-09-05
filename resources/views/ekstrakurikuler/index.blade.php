@@ -6,6 +6,7 @@
 
 {{-- HEADER JUDUL HALAMAN --}}
 <section class="page-header">
+    <div class="page-header-spotlight" id="pageHeaderSpotlight"></div>
     <div class="container text-center" data-aos="fade-up">
         <h1>Ekstrakurikuler</h1>
         <p>Beragam kegiatan untuk mengasah minat dan bakat siswa di luar jam pelajaran.</p>
@@ -14,7 +15,7 @@
 
 {{-- TOMBOL DAFTAR EKSTRAKURIKULER & DAFTAR SELURUH EKSTRAKURIKULER --}}
 <section class="section-block">
-    <button class="btn-daftar-eskul" onclick="window.open('https://reg-eskul.smkn1cijati.sch.id/', '_blank')">Daftar Ekstrakurikuler Di Sini</button>
+    <button class="btn-daftar-eskul" onclick="window.open('https://reg-eskul.smkn1cijati.sch.id/', '_blank')">Daftar Ekstrakurikuler Di Sini </button>
     <div class="container">
         <div class="row g-4">
             @forelse($ekstrakurikuler as $index => $ekskul)

@@ -22,7 +22,7 @@
                     {{ $profil->sambutan_kepala_sekolah ?? 'Selamat datang di ' . ($profil->nama_sekolah ?? 'SMK Negeri 1 Cijati') . ' — tempat setiap siswa dibimbing untuk berpikir kritis, berkarya, dan tumbuh menjadi pribadi yang berintegritas.' }}
                 </p>
                 <div class="hero-cta">
-                    <a href="{{ route('profile') }}" class="animated-button">
+                    <a href="{{ route('profile') }}" class="animated-button animated-button-outline">
                         <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
                             <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
                         </svg>
@@ -52,7 +52,7 @@
             <div class="hero-stat-item">
                 <i class="bi bi-door-open"></i>
                 <div>
-                    <strong><span class="counter" data-target="{{ $profil->jumlah_kelas ?? 24 }}">0</span></strong>
+                    <strong><span class="counter" data-target="{{ $profil->jumlah_kelas ?? 0 }}">0</span></strong>
                     <span>Jumlah Kelas</span>
                 </div>
             </div> 

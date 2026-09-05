@@ -19,7 +19,6 @@
         {{-- SIDEBAR --}}
         <aside class="admin-sidebar">
             <div class="admin-sidebar-brand">
-                <i class="bi bi-gear-fill"></i>
                 <div>
                     <strong>Dashboard Admin</strong>
                     <span>{{ $profil->nama_sekolah ?? 'Sistem Sekolah' }}</span>
