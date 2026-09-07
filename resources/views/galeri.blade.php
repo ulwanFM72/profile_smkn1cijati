@@ -6,7 +6,6 @@
 
 {{-- HEADER JUDUL HALAMAN --}}
 <section class="page-header">
-    <div class="page-header-spotlight" id="pageHeaderSpotlight"></div>
     <div class="container text-center" data-aos="fade-up">
         <h1>Galeri Kegiatan</h1>
         <p>Kumpulan momen kegiatan, prestasi, dan keseharian di sekolah. Klik foto untuk memperbesar.</p>

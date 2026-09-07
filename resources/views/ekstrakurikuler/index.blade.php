@@ -6,7 +6,6 @@
 
 {{-- HEADER JUDUL HALAMAN --}}
 <section class="page-header">
-    <div class="page-header-spotlight" id="pageHeaderSpotlight"></div>
     <div class="container text-center" data-aos="fade-up">
         <h1>Ekstrakurikuler</h1>
         <p>Beragam kegiatan untuk mengasah minat dan bakat siswa di luar jam pelajaran.</p>

@@ -47,7 +47,6 @@
                 <div class="col-md-4 admin-form-group">
                     <label class="admin-form-label">Jumlah Kelas</label>
                     <input type="number" min="0" name="jumlah_kelas" class="admin-form-control" value="{{ old('jumlah_kelas', $profil->jumlah_kelas) }}" placeholder="Contoh: 20">
-                    <p class="admin-form-hint">Ditampilkan pada statistik "Jumlah Kelas" di halaman Beranda.</p>
                 </div>
             </div>
         </div>
@@ -81,7 +80,6 @@
             <div class="admin-form-group">
                 <label class="admin-form-label">Misi</label>
                 <textarea name="misi" rows="4" class="admin-form-control">{{ old('misi', $profil->misi) }}</textarea>
-                <p class="admin-form-hint">Satu poin per baris.</p>
             </div>
         </div>
     </div>

@@ -245,57 +245,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // ===== EFEK SOROTAN (SPOTLIGHT) MENGIKUTI KURSOR/SENTUHAN =====
-    // Fungsi umum: pasang efek sorotan pada sebuah container & elemen sorotannya.
-    // Dipakai untuk .hero (beranda) dan .page-header (profil, ekskul, jurusan, galeri, dll).
-    function initSpotlight(container, spotlight) {
-        if (!container || !spotlight) return;
-
-        // Pindahkan posisi titik sorotan mengikuti koordinat kursor/sentuhan
-        function moveSpotlight(clientX, clientY) {
-            const rect = container.getBoundingClientRect();
-            const x = ((clientX - rect.left) / rect.width) * 100;
-            const y = ((clientY - rect.top) / rect.height) * 100;
-            spotlight.style.setProperty("--spot-x", x + "%");
-            spotlight.style.setProperty("--spot-y", y + "%");
-            spotlight.classList.add("active");
-        }
-
-        // Desktop: ikuti gerakan mouse
-        container.addEventListener("mousemove", function (e) {
-            moveSpotlight(e.clientX, e.clientY);
-        });
-        container.addEventListener("mouseleave", function () {
-            spotlight.classList.remove("active");
-        });
-
-        // Mobile/tablet: ikuti sentuhan jari
-        container.addEventListener(
-            "touchmove",
-            function (e) {
-                if (e.touches && e.touches[0]) {
-                    moveSpotlight(e.touches[0].clientX, e.touches[0].clientY);
-                }
-            },
-            { passive: true },
-        );
-        container.addEventListener("touchend", function () {
-            spotlight.classList.remove("active");
-        });
-    }
-
-    // Sorotan di hero beranda
-    initSpotlight(
-        document.querySelector(".hero"),
-        document.getElementById("heroSpotlight"),
-    );
-
-    // Sorotan di header halaman dalam (Profil, Ekstrakurikuler, Jurusan, Galeri, dll)
-    initSpotlight(
-        document.querySelector(".page-header"),
-        document.getElementById("pageHeaderSpotlight"),
-    );
-
     // ===== CAROUSEL COVERFLOW JURUSAN (KARTU 3D BERTUMPUK) =====
     const coverflowTrack = document.getElementById("coverflowTrack");
 

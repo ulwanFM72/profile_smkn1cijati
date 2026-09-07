@@ -21,7 +21,6 @@
             <div class="admin-sidebar-brand">
                 <div>
                     <strong>Dashboard Admin</strong>
-                    <span>{{ $profil->nama_sekolah ?? 'Sistem Sekolah' }}</span>
                 </div>
             </div>
 

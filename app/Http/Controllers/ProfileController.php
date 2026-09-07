@@ -19,7 +19,7 @@ class ProfileController extends Controller
         $totalGuru = Guru::count();
 
         $urutanAngkatan = ['X', 'XI', 'XII'];
-        $urutanJurusan = ['RPL', 'BD', 'TO', 'APHP'];
+        $urutanJurusan = ['RPL', 'BDP', 'TKRO', 'APHP'];
 
         $rows = Siswa::all();
 

@@ -11,7 +11,7 @@
 <div class="row">
     <div class="col-md-6 admin-form-group">
         <label class="admin-form-label">Pembina</label>
-        <input type="text" name="pembina" class="admin-form-control" value="{{ old('pembina', $ekstrakurikuler->pembina ?? '') }}" placeholder="Contoh: Bpk. Jaya Nursetiadi">
+        <input type="text" name="pembina" class="admin-form-control" value="{{ old('pembina', $ekstrakurikuler->pembina ?? '') }}">
     </div>
     <div class="col-md-6 admin-form-group">
         <label class="admin-form-label">Jadwal Latihan</label>
@@ -21,7 +21,7 @@
 
 <div class="admin-form-group">
     <label class="admin-form-label">Icon (Bootstrap Icons)</label>
-    <input type="text" name="icon" class="admin-form-control" value="{{ old('icon', $ekstrakurikuler->icon ?? '') }}" placeholder="Contoh: bi-trophy">
+    <input type="text" name="icon" class="admin-form-control" value="{{ old('icon', $ekstrakurikuler->icon ?? '') }}">
     <p class="admin-form-hint">Cari nama icon di <a href="https://icons.getbootstrap.com/" target="_blank" rel="noopener">icons.getbootstrap.com</a>, salin nama class-nya (diawali "bi-").</p>
 </div>
 

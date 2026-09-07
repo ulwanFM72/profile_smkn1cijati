@@ -12,7 +12,6 @@
         <option value="Kegiatan Belajar">
         <option value="Ekstrakurikuler">
     </datalist>
-    <p class="admin-form-hint">Kategori dipakai untuk filter di halaman Galeri publik. Pakai kategori yang sudah ada supaya filter tetap rapi.</p>
 </div>
 
 <div class="admin-form-group">

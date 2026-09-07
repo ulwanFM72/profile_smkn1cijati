@@ -414,26 +414,6 @@ button:focus-visible {
     z-index: 0;
 }
 
-/* Spotlight yang mengikuti kursor — membantu "menerangi" foto hero
-   yang agak gelap (diambil sore hari). Kecerahan sedang, radius kecil. */
-.hero-spotlight {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    background: radial-gradient(
-        circle 300px at var(--spot-x, 60%) var(--spot-y, 55%),
-        rgba(255, 237, 199, 0.28) 0%,
-        rgba(255, 237, 199, 0.1) 45%,
-        transparent 75%
-    );
-    opacity: 0;
-    transition: opacity 0.4s ease;
-}
-.hero-spotlight.active {
-    opacity: 1;
-}
-
 /* ===== KONTEN TEKS DI SEKSI HERO (JUDUL, MOTTO, DESKRIPSI, CTA) ===== */
 .hero-inner {
     position: relative;
@@ -676,25 +656,6 @@ button:focus-visible {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-}
-/* Sorotan yang mengikuti kursor — sama seperti efek di hero beranda,
-   membantu "menerangi" foto latar header halaman dalam. */
-.page-header-spotlight {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    background: radial-gradient(
-        circle 300px at var(--spot-x, 60%) var(--spot-y, 55%),
-        rgba(255, 237, 199, 0.28) 0%,
-        rgba(255, 237, 199, 0.1) 45%,
-        transparent 75%
-    );
-    opacity: 0;
-    transition: opacity 0.4s ease;
-}
-.page-header-spotlight.active {
-    opacity: 1;
 }
 
 .page-header > .container {

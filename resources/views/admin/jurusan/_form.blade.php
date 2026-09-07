@@ -1,11 +1,11 @@
 <div class="row">
     <div class="col-md-3 admin-form-group">
         <label class="admin-form-label">Singkatan</label>
-        <input type="text" name="singkatan" class="admin-form-control" value="{{ old('singkatan', $jurusan->singkatan ?? '') }}" placeholder="RPL" required>
+        <input type="text" name="singkatan" class="admin-form-control" value="{{ old('singkatan', $jurusan->singkatan ?? '') }}">
     </div>
     <div class="col-md-9 admin-form-group">
         <label class="admin-form-label">Nama Jurusan</label>
-        <input type="text" name="nama" class="admin-form-control" value="{{ old('nama', $jurusan->nama ?? '') }}" placeholder="Rekayasa Perangkat Lunak" required>
+        <input type="text" name="nama" class="admin-form-control" value="{{ old('nama', $jurusan->nama ?? '') }}">
     </div>
 </div>
 
@@ -17,12 +17,11 @@
 <div class="admin-form-group">
     <label class="admin-form-label">Kompetensi yang Dipelajari</label>
     <textarea name="kompetensi" rows="5" class="admin-form-control">{{ old('kompetensi', $jurusan->kompetensi ?? '') }}</textarea>
-    <p class="admin-form-hint">Satu poin per baris (tekan Enter untuk poin baru) — akan ditampilkan sebagai daftar bercentang.</p>
 </div>
 
 <div class="admin-form-group">
     <label class="admin-form-label">Icon (Bootstrap Icons)</label>
-    <input type="text" name="icon" class="admin-form-control" value="{{ old('icon', $jurusan->icon ?? '') }}" placeholder="Contoh: bi-code-slash">
+    <input type="text" name="icon" class="admin-form-control" value="{{ old('icon', $jurusan->icon ?? '') }}">
 </div>
 
 <hr class="my-4">

@@ -1,11 +1,11 @@
 <div class="admin-form-group">
     <label class="admin-form-label">Nama Lengkap (dengan gelar)</label>
-    <input type="text" name="nama" class="admin-form-control" value="{{ old('nama', $guru->nama ?? '') }}" placeholder="Contoh: Dra. Siti Rahayu, M.Pd." required>
+    <input type="text" name="nama" class="admin-form-control" value="{{ old('nama', $guru->nama ?? '') }}">
 </div>
 
 <div class="admin-form-group">
     <label class="admin-form-label">Jabatan</label>
-    <input type="text" name="jabatan" class="admin-form-control" value="{{ old('jabatan', $guru->jabatan ?? '') }}" placeholder="Contoh: Kepala Sekolah / Guru Matematika">
+    <input type="text" name="jabatan" class="admin-form-control" value="{{ old('jabatan', $guru->jabatan ?? '') }}">
 </div>
 
 <div class="admin-form-group">

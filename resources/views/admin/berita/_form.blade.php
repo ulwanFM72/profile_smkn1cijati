@@ -6,7 +6,6 @@
 <div class="admin-form-group">
     <label class="admin-form-label">Ringkasan</label>
     <input type="text" name="ringkasan" class="admin-form-control" value="{{ old('ringkasan', $berita->ringkasan ?? '') }}" required>
-    <p class="admin-form-hint">Ditampilkan di card berita Beranda (maks. sekitar 100 karakter).</p>
 </div>
 
 <div class="admin-form-group">
