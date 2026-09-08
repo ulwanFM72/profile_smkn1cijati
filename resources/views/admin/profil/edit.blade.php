@@ -113,15 +113,15 @@
         <div class="admin-panel-body">
             <div class="admin-form-group">
                 <label class="admin-form-label"><i class="bi bi-instagram"></i> Instagram</label>
-                <input type="url" name="instagram" class="admin-form-control" value="{{ old('instagram', $profil->instagram) }}" placeholder="https://instagram.com/namaakun">
+                <input type="url" name="instagram" class="admin-form-control" value="{{ old('instagram', $profil->instagram) }}">
             </div>
             <div class="admin-form-group">
                 <label class="admin-form-label"><i class="bi bi-facebook"></i> Facebook</label>
-                <input type="url" name="facebook" class="admin-form-control" value="{{ old('facebook', $profil->facebook) }}" placeholder="https://facebook.com/namaakun">
+                <input type="url" name="facebook" class="admin-form-control" value="{{ old('facebook', $profil->facebook) }}">
             </div>
             <div class="admin-form-group">
                 <label class="admin-form-label"><i class="bi bi-youtube"></i> YouTube</label>
-                <input type="url" name="youtube" class="admin-form-control" value="{{ old('youtube', $profil->youtube) }}" placeholder="https://youtube.com/@namaakun">
+                <input type="url" name="youtube" class="admin-form-control" value="{{ old('youtube', $profil->youtube) }}">
             </div>
         </div>
     </div>
