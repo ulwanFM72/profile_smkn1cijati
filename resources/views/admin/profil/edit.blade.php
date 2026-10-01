@@ -13,7 +13,7 @@
     @method('PUT')
 
     <div class="admin-panel">
-        <div class="admin-panel-header">Identitas Sekolah</div>
+        <div class="admin-panel-header">Identitas Sekolah</div>.
         <div class="admin-panel-body">
             <div class="row">
                 <div class="col-md-8 admin-form-group">

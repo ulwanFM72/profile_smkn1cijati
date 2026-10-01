@@ -25,7 +25,7 @@
                                 <img src="{{ asset('storage/' . $ekskul->gambar) }}" alt="{{ $ekskul->nama }}" loading="lazy">
                             @else
                                 <div class="card-ekskul-full-img-placeholder">
-                                    <i class="bi {{ $ekskul->icon ?? 'bi-stars' }}"></i>
+                                    <i class="bi {{ $ekskul->icon ?? 'bi-stars' }}"></i>.
                                 </div>
                             @endif
                         </div>

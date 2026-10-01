@@ -4,7 +4,7 @@
             {{-- KOLOM KONTAK SEKOLAH --}}
             <div class="col-lg-4 col-md-6">
                 <div class="footer-col">
-                    <h6 class="footer-title">Kontak</h6>
+                    <h6 class="footer-title">Kontak</h6>.
                     <div class="footer-col-body">
                         <ul class="footer-links">
                             <li><i class="bi bi-geo-alt"></i> {{ $profil->alamat ?? 'Jl. Pendidikan No. 1, Indonesia' }}</li>

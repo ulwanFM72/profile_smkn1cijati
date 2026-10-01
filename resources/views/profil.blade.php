@@ -10,7 +10,7 @@
         <h1>Profil Sekolah</h1>
         <p>Mengenal lebih dekat sejarah, visi, dan misi kami.</p>
     </div>
-</section>
+</section>.
 
 {{-- SEJARAH SINGKAT, SAMBUTAN KEPALA SEKOLAH, VISI & MISI --}}
 <section class="section-block">

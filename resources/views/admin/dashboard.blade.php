@@ -6,7 +6,7 @@
 
 {{-- JUDUL HALAMAN DASHBOARD --}}
 <div class="admin-page-header">
-    <h1>Ringkasan</h1>
+    <h1>Ringkasan</h1>.
 </div>
 
 {{-- KARTU RINGKASAN JUMLAH DATA (BERITA, EKSKUL, JURUSAN, GALERI, GURU, SISWA, KELAS) --}}

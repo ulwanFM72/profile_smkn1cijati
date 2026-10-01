@@ -45,12 +45,12 @@
                                 <a href="{{ route('admin.jurusan.edit', $item) }}" class="btn-admin btn-admin-outline btn-admin-sm">
                                     <i class="bi bi-pencil"></i> Kelola
                                 </a>
-                                <form method="POST" action="{{ route('admin.jurusan.destroy', $item) }}" onsubmit="return confirm('Hapus jurusan ini beserta seluruh galerinya?');">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn-admin btn-admin-danger btn-admin-sm">
-                                        <i class="bi bi-trash"></i> Hapus
-                                    </button>
+                                <form method="POST" action="{{ route('admin.jurusan.destroy', $item) }}" id="delete-form-{{ $item->id }}" class="delete-form">
+                                @csrf
+                                @method('DELETE')
+                                <button type="button" class="btn-admin btn-admin-danger btn-admin-sm" onclick="confirmDelete('{{ $item->id }}', '{{ $item->singkatan }}')">
+                                    <i class="bi bi-trash"></i> Hapus
+                                </button>
                                 </form>
                             </div>
                         </td>

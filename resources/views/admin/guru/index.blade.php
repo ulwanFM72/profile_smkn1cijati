@@ -41,10 +41,10 @@
                                 <a href="{{ route('admin.guru.edit', $item) }}" class="btn-admin btn-admin-outline btn-admin-sm">
                                     <i class="bi bi-pencil"></i> Edit
                                 </a>
-                                <form method="POST" action="{{ route('admin.guru.destroy', $item) }}" onsubmit="return confirm('Hapus data guru ini?');">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn-admin btn-admin-danger btn-admin-sm">
+                                <form method="POST" action="{{ route('admin.guru.destroy', $item) }}" id="delete-form-{{ $item->id }}" class="delete-form">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="button" class="btn-admin btn-admin-danger btn-admin-sm" onclick="confirmDelete('{{ $item->id }}', '{{ $item->nama }}')">
                                         <i class="bi bi-trash"></i> Hapus
                                     </button>
                                 </form>
