@@ -9,7 +9,7 @@
     <div class="container text-center" data-aos="fade-up">
         <h1>{{ $ekstrakurikuler->nama }}</h1>
     </div>
-</section>
+</section>.
 
 {{-- DETAIL EKSTRAKURIKULER: FOTO, DESKRIPSI, PEMBINA & JADWAL --}}
 <section class="section-block">

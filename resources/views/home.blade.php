@@ -6,7 +6,7 @@
 
 {{-- HERO --}}
 <section class="hero" id="top">
-    <div class="hero-overlay"></div>
+    <div class="hero-overlay"></div>.
     <div class="container hero-inner">
         <div class="row">
             <div class="col-lg-7 col-xl-6" data-aos="fade-up" data-aos-duration="700">

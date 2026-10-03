@@ -7,7 +7,7 @@
 <div class="admin-page-header">
     <h1>Tambah Ekstrakurikuler</h1>
     <a href="{{ route('admin.ekstrakurikuler.index') }}" class="btn-admin btn-admin-outline"><i class="bi bi-arrow-left"></i> Kembali</a>
-</div>
+</div>.
 
 <div class="admin-panel">
     <div class="admin-panel-body">

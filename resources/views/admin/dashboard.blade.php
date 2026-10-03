@@ -24,7 +24,7 @@
             <p class="label">Total Ekstrakurikuler</p>
             <p class="value">{{ $totalEkstrakurikuler }}</p>
         </div>
-    </div>
+    </div>.
     <div class="admin-stat-card">
         <div class="admin-stat-icon icon-amber"><i class="bi bi-mortarboard"></i></div>
         <div>
