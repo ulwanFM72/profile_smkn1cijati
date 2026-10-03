@@ -19,7 +19,6 @@ use App\Http\Controllers\Admin\GaleriController as AdminGaleriController;
 use App\Http\Controllers\Admin\JurusanController as AdminJurusanController;
 use App\Http\Controllers\Admin\GuruController as AdminGuruController;
 
-use Illuminate\Support\Facades\DB;
 
 
 // HALAMAN PUBLIK / USER
@@ -90,33 +89,4 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
   Route::get('/guru/{guru}/edit', [AdminGuruController::class, 'edit'])->name('guru.edit');
   Route::put('/guru/{guru}', [AdminGuruController::class, 'update'])->name('guru.update');
   Route::delete('/guru/{guru}', [AdminGuruController::class, 'destroy'])->name('guru.destroy');
-});
-
-Route::get('/import-data/{token}', function (string $token) {
-  $secret = env('SETUP_TOKEN');
-  abort_unless($secret && hash_equals($secret, $token), 404);
-
-  $path = database_path('local_data.sql');
-  abort_unless(file_exists($path), 404);
-
-  DB::unprepared('SET FOREIGN_KEY_CHECKS=0');
-  foreach (
-    [
-      'jurusan_galeris',
-      'jurusans',
-      'galeris',
-      'beritas',
-      'ekstrakurikulers',
-      'gurus',
-      'siswas',
-      'profil_sekolahs',
-      'users'
-    ] as $t
-  ) {
-    DB::table($t)->truncate();
-  }
-  DB::unprepared(file_get_contents($path));
-  DB::unprepared('SET FOREIGN_KEY_CHECKS=1');
-
-  return 'Selesai. Hapus route dan file SQL ini sekarang.';
 });
