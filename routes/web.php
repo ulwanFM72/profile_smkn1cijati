@@ -19,6 +19,9 @@ use App\Http\Controllers\Admin\GaleriController as AdminGaleriController;
 use App\Http\Controllers\Admin\JurusanController as AdminJurusanController;
 use App\Http\Controllers\Admin\GuruController as AdminGuruController;
 
+use Illuminate\Support\Facades\Artisan;
+
+
 // HALAMAN PUBLIK / USER
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
@@ -87,4 +90,30 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
   Route::get('/guru/{guru}/edit', [AdminGuruController::class, 'edit'])->name('guru.edit');
   Route::put('/guru/{guru}', [AdminGuruController::class, 'update'])->name('guru.update');
   Route::delete('/guru/{guru}', [AdminGuruController::class, 'destroy'])->name('guru.destroy');
+});
+
+Route::get('/setup-db/{token}', function (string $token) {
+  $secret = env('SETUP_TOKEN');
+  abort_unless($secret && hash_equals($secret, $token), 404);
+
+  Artisan::call('migrate', ['--force' => true]);
+  $out = Artisan::output();
+
+  foreach (
+    [
+      'ProfilSekolahSeeder',
+      'EkstrakurikulerSeeder',
+      'GaleriSeeder',
+      'BeritaSeeder',
+      'GuruSeeder',
+      'SiswaSeeder',
+      'JurusanSeeder',
+      'AdminSeeder'
+    ] as $seeder
+  ) {
+    Artisan::call('db:seed', ['--class' => "Database\\Seeders\\$seeder", '--force' => true]);
+    $out .= Artisan::output();
+  }
+
+  return response('<pre>' . e($out) . '</pre>');
 });
