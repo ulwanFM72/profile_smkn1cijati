@@ -60,7 +60,7 @@
             <p class="value">{{ $jumlahKelas }}</p>
         </div>
     </a>
-</div>
+</div>.
 
 {{-- TABEL 5 BERITA TERBARU --}}
 <div class="admin-panel">

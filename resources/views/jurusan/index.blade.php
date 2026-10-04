@@ -10,7 +10,7 @@
         <h1>Jurusan</h1>
         <p>{{ $jurusan->count() }} program keahlian yang tersedia untuk mempersiapkan siswa siap kerja, melanjutkan, atau berwirausaha.</p>
     </div>
-</section>
+</section>.
 
 <section class="section-block">
     <div class="container">
