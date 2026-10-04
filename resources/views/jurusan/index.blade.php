@@ -43,7 +43,7 @@
                             </div>
                         @endforeach
                     </div>
-                </div>
+                </div>.
 
                 {{-- TITIK INDIKATOR (DOTS) UNTUK BERPINDAH ANTAR KARTU JURUSAN --}}
                 <div class="coverflow-dots" id="coverflowDots">
