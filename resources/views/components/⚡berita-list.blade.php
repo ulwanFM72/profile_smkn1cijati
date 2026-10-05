@@ -36,7 +36,7 @@ new class extends Component
 
     <div wire:loading class="text-center mb-3">
         <span class="spinner-border spinner-border-sm"></span> Mencari...
-    </div>.
+    </div>
 
     <div class="row g-4">
         @forelse($berita as $index => $item)
