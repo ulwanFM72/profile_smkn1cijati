@@ -7,7 +7,7 @@
 <div class="admin-page-header">
     <h1>Edit Jurusan — {{ $jurusan->singkatan }}</h1>
     <a href="{{ route('admin.jurusan.index') }}" class="btn-admin btn-admin-outline"><i class="bi bi-arrow-left"></i> Kembali</a>
-</div>.
+</div>
 
 {{-- FORM EDIT DATA UTAMA JURUSAN --}}
 <div class="admin-panel">
