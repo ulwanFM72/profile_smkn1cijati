@@ -17,7 +17,7 @@
             @include('admin.ekstrakurikuler._form')
             <button type="submit" class="btn-admin btn-admin-primary"><i class="bi bi-check-lg"></i> Simpan Perubahan</button>
         </form>
-    </div>.
+    </div>
 </div>
 
 @endsection
