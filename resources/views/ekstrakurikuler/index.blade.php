@@ -10,7 +10,7 @@
         <h1>Ekstrakurikuler</h1>
         <p>Beragam kegiatan untuk mengasah minat dan bakat siswa di luar jam pelajaran.</p>
     </div>
-</section>.
+</section>
 
 {{-- TOMBOL DAFTAR EKSTRAKURIKULER & DAFTAR SELURUH EKSTRAKURIKULER --}}
 <section class="section-block">

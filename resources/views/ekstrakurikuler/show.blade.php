@@ -36,7 +36,7 @@
                     <i class="bi bi-arrow-left"></i> Kembali ke Semua Ekstrakurikuler
                 </a>
             </div>
-        </div>.
+        </div>
 
         {{-- REKOMENDASI EKSTRAKURIKULER LAIN --}}
         @if($ekstrakurikulerLain->count())
