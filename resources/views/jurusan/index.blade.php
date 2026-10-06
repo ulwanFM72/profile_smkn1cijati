@@ -4,7 +4,6 @@
 
 @section('content')
 
-{{-- HEADER JUDUL HALAMAN --}}
 <section class="page-header">
     <div class="container text-center" data-aos="fade-up">
         <h1>Jurusan</h1>
@@ -14,7 +13,6 @@
 
 <section class="section-block">
     <div class="container">
-        {{-- CAROUSEL COVERFLOW DAFTAR JURUSAN (LOGIKA GESER/KLIK DIATUR OLEH script.js) --}}
         @if($jurusan->count())
             <div class="coverflow-jurusan" data-aos="fade-up">
                 <div class="coverflow-stage">
@@ -45,7 +43,6 @@
                     </div>
                 </div>
 
-                {{-- TITIK INDIKATOR (DOTS) UNTUK BERPINDAH ANTAR KARTU JURUSAN --}}
                 <div class="coverflow-dots" id="coverflowDots">
                     @foreach($jurusan as $index => $item)
                         <button type="button" class="coverflow-dot" data-index="{{ $index }}" aria-label="Ke {{ $item->singkatan }}"></button>

@@ -4,7 +4,6 @@
 
 @section('content')
 
-{{-- JUDUL HALAMAN & TOMBOL AKSI --}}
 <div class="admin-page-header">
     <h1>Kelola Jurusan</h1>
     <a href="{{ route('admin.jurusan.create') }}" class="btn-admin btn-admin-primary">
@@ -12,7 +11,6 @@
     </a>
 </div>
 
-{{-- TABEL DAFTAR JURUSAN --}}
 <div class="admin-panel">
     @if($jurusan->count())
         <table class="admin-table">

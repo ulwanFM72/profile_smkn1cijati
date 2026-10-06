@@ -4,7 +4,6 @@
 
 @section('content')
 
-{{-- JUDUL HALAMAN & TOMBOL AKSI --}}
 <div class="admin-page-header">
     <h1>Kelola Berita</h1>
     <a href="{{ route('admin.berita.create') }}" class="btn-admin btn-admin-primary">
@@ -12,7 +11,6 @@
     </a>
 </div>
 
-{{-- TABEL DAFTAR BERITA --}}
 <div class="admin-panel">
     @if($berita->count())
         <table class="admin-table">

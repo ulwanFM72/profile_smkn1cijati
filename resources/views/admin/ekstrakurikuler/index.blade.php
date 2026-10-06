@@ -4,7 +4,6 @@
 
 @section('content')
 
-{{-- JUDUL HALAMAN & TOMBOL AKSI --}}
 <div class="admin-page-header">
     <h1>Kelola Ekstrakurikuler</h1>
     <a href="{{ route('admin.ekstrakurikuler.create') }}" class="btn-admin btn-admin-primary">
@@ -12,7 +11,6 @@
     </a>
 </div>
 
-{{-- TABEL DAFTAR EKSTRAKURIKULER --}}
 <div class="admin-panel">
     @if($ekstrakurikuler->count())
         <table class="admin-table">

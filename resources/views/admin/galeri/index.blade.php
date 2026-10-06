@@ -4,7 +4,6 @@
 
 @section('content')
 
-{{-- JUDUL HALAMAN & TOMBOL AKSI --}}
 <div class="admin-page-header">
     <h1>Kelola Galeri</h1>
     <a href="{{ route('admin.galeri.create') }}" class="btn-admin btn-admin-primary">
@@ -12,7 +11,6 @@
     </a>
 </div>
 
-{{-- TABEL DAFTAR FOTO GALERI --}}
 <div class="admin-panel">
     @if($galeri->count())
         <table class="admin-table">
