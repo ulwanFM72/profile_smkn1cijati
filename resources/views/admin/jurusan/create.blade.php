@@ -17,6 +17,6 @@
             <button type="submit" class="btn-admin btn-admin-primary"><i class="bi bi-check-lg"></i> Simpan Jurusan</button>
         </form>
     </div>
-</div>
+</div>.
 
 @endsection
