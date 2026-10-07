@@ -34,4 +34,4 @@
     @endisset
     <input type="file" name="gambar" class="admin-form-control" accept="image/*">
     <p class="admin-form-hint">Format JPG/PNG, maksimal 2MB. Kosongkan kalau tidak ingin mengganti foto.</p>
-</div>.
+</div>
