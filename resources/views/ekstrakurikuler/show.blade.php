@@ -4,14 +4,12 @@
 
 @section('content')
 
-{{-- HEADER JUDUL HALAMAN --}}
 <section class="page-header">
     <div class="container text-center" data-aos="fade-up">
         <h1>{{ $ekstrakurikuler->nama }}</h1>
     </div>
 </section>.
 
-{{-- DETAIL EKSTRAKURIKULER: FOTO, DESKRIPSI, PEMBINA & JADWAL --}}
 <section class="section-block">
     <div class="container">
         <div class="row justify-content-center">
@@ -38,7 +36,6 @@
             </div>
         </div>
 
-        {{-- REKOMENDASI EKSTRAKURIKULER LAIN --}}
         @if($ekstrakurikulerLain->count())
             <div class="section-heading mt-5 pt-5" data-aos="fade-up">
                 <span class="eyebrow">Lainnya</span>

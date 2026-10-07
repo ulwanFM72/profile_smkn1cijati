@@ -4,7 +4,6 @@
 
 @section('content')
 
-{{-- HERO --}}
 <section class="hero" id="top">
     <div class="hero-overlay"></div>.
     <div class="container hero-inner">
@@ -45,7 +44,6 @@
         </div>
     </div>
 
-    {{-- STRIP STATISTIK MENGAMBANG DI BATAS BAWAH HERO --}}
     <div class="container hero-stats-wrap" data-aos="fade-up" data-aos-delay="200">
         <div class="hero-stats-bar">
             <div class="hero-stat-item">
@@ -80,7 +78,6 @@
     </div>
 </section>
 
-{{-- BERITA KEGIATAN SEKOLAH --}}
 <section class="section-block">
     <div class="container">
         <div class="section-heading" data-aos="fade-up">
@@ -136,7 +133,6 @@
     </div>
 </section>
 
-{{-- EKSTRAKURIKULER PREVIEW --}}
 <section class="section-block">
     <div class="container">
         <div class="section-heading" data-aos="fade-up">
@@ -178,7 +174,6 @@
     </div>
 </section>
 
-{{-- GALERI SINGKAT (hover zoom + lightbox) --}}
 <section class="section-block bg-soft">
     <div class="container">
         <div class="section-heading" data-aos="fade-up">
@@ -226,7 +221,6 @@
     </div>
 </section>
 
-{{-- CTA PENUTUP --}}
 <section class="cta-section">
     <div class="container text-center" data-aos="fade-up">
         <h2>Tertarik Bergabung dengan Kami?</h2>
