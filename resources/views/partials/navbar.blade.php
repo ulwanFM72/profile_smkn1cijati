@@ -1,12 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-school navbar-transparent fixed-top" id="mainNavbar">
     <div class="container">
-        {{-- LOGO & NAMA SEKOLAH --}}
         <a class="navbar-brand" href="{{ route('home') }}">
             <img src="{{ asset('images/logo-smkn1cijati.webp') }}" alt="Logo Sekolah" class="brand-logo">
             <span class="brand-text">{{ $profil->nama_sekolah ?? 'SMK Negeri 1 Cijati' }}</span>
         </a>
  
-        {{-- TOMBOL HAMBURGER UNTUK BUKA MENU DI LAYAR KECIL --}}
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
                 aria-controls="navMenu" aria-expanded="false" aria-label="Buka menu navigasi">
             <span class="navbar-toggler-icon"></span>
@@ -14,7 +12,6 @@
  
         <div class="collapse navbar-collapse" id="navMenu">
             <ul class="navbar-nav ms-auto align-items-lg-center">
-                {{-- LINK MENU HALAMAN PUBLIK --}}
                 <li class="nav-item">
                     <a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}">Beranda</a>
                 </li>

@@ -8,7 +8,7 @@
     <div class="container text-center" data-aos="fade-up">
         <h1>{{ $ekstrakurikuler->nama }}</h1>
     </div>
-</section>.
+</section>
 
 <section class="section-block">
     <div class="container">

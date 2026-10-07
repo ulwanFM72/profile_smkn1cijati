@@ -16,7 +16,6 @@
 <body>
 
     <div class="admin-wrapper">
-        {{-- SIDEBAR --}}
         <aside class="admin-sidebar">
             <div class="admin-sidebar-brand">
                 <div>
@@ -24,7 +23,6 @@
                 </div>
             </div>
 
-            {{-- DAFTAR MENU NAVIGASI SIDEBAR ADMIN --}}
             <p class="admin-sidebar-label">Menu</p>
             <nav class="admin-sidebar-nav">
                 <a href="{{ route('admin.dashboard') }}" class="{{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
@@ -50,16 +48,13 @@
                 </a>
             </nav>
 
-            {{-- TOMBOL LOGOUT ADMIN --}}
             <form method="POST" action="{{ route('admin.logout') }}" class="admin-sidebar-logout">
                 @csrf
                 <button type="submit"><i class="bi bi-box-arrow-right"></i> Keluar</button>
             </form>
         </aside>
 
-        {{-- KONTEN --}}
         <div class="admin-content">
-            {{-- TOPBAR (TOMBOL BUKA SIDEBAR DI MOBILE & NAMA ADMIN YANG LOGIN) --}}
             <header class="admin-topbar">
                 <button class="admin-sidebar-toggle" id="sidebarToggle" aria-label="Buka menu">
                     <i class="bi bi-list"></i>
@@ -69,7 +64,6 @@
                 </div>
             </header>
 
-            {{-- AREA KONTEN UTAMA: NOTIFIKASI SUKSES/ERROR LALU KONTEN TIAP HALAMAN ADMIN --}}
             <main class="admin-main">
                 @if(session('success'))
                 <script>
@@ -102,7 +96,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    {{-- TOMBOL BUKA/TUTUP SIDEBAR DI LAYAR MOBILE --}}
     <script>
         document.getElementById('sidebarToggle')?.addEventListener('click', function () {
             document.querySelector('.admin-wrapper').classList.toggle('sidebar-open');

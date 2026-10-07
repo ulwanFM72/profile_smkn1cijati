@@ -9,7 +9,7 @@
         <h1>Galeri Kegiatan</h1>
         <p>Kumpulan momen kegiatan, prestasi, dan keseharian di sekolah. Klik foto untuk memperbesar.</p>
     </div>
-</section>.
+</section>
 
 <section class="section-block">
     <div class="container">

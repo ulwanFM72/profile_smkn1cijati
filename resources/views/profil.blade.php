@@ -9,7 +9,7 @@
         <h1>Profil Sekolah</h1>
         <p>Mengenal lebih dekat sejarah, visi, dan misi kami.</p>
     </div>
-</section>.
+</section>
 
 <section class="section-block">
     <div class="container">
