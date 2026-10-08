@@ -50,6 +50,6 @@
             <p class="mt-3 text-body-muted">Tidak ada foto untuk kategori ini.</p>
         </div>
     </div>
-</section>
+</section>.
 
 @endsection

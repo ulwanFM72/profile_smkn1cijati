@@ -227,6 +227,6 @@
         <p>Daftarkan putra-putri Anda dan jadilah bagian dari komunitas belajar yang menyenangkan.</p>
         <a href="#kontak" class="btn btn-light-school">Hubungi Kami Sekarang</a>
     </div>
-</section>
+</section>.
 
 @endsection
