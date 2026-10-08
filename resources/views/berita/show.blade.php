@@ -53,6 +53,6 @@
             </div>
         @endif
     </div>
-</section>
+</section>.
 
 @endsection
