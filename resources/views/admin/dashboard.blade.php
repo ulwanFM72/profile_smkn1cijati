@@ -88,6 +88,6 @@
             Belum ada data berita.
         </div>
     @endif
-</div>.
+</div>
 
 @endsection
