@@ -61,4 +61,4 @@
             &copy; {{ date('Y') }} {{ $profil->nama_sekolah ?? 'SMK Negeri 1 Cijati' }}. Seluruh hak cipta dilindungi.
         </div>
     </div>
-</footer>.
+</footer>

@@ -68,4 +68,4 @@ new class extends Component
     <div class="mt-5 d-flex justify-content-center">
         {{ $berita->links('pagination::bootstrap-5') }}
     </div>
-</div>.
+</div>

@@ -92,7 +92,7 @@
             @endforeach
         </div>
     </div>
-</section>.
+</section>
 @endif
 
 @endsection
