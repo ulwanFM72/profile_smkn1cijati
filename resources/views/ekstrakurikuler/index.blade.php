@@ -49,6 +49,6 @@
             @endforelse
         </div>
     </div>
-</section>
+</section>.
 
 @endsection
