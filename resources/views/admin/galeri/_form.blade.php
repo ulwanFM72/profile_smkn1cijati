@@ -21,4 +21,4 @@
     @endisset
     <input type="file" name="gambar" class="admin-form-control" accept="image/*" {{ isset($galeri) ? '' : 'required' }}>
     <p class="admin-form-hint">Format JPG/PNG, maksimal 2MB.</p>
-</div>.
+</div>
