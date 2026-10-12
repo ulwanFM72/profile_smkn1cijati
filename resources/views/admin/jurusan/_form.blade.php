@@ -53,4 +53,4 @@
     @endisset
     <input type="file" name="foto_sampul" class="admin-form-control" accept="image/*">
     <p class="admin-form-hint">Format JPG/PNG, maksimal 2MB.</p>
-</div>.
+</div>

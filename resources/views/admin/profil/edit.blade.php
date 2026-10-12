@@ -127,6 +127,6 @@
     </div>
 
     <button type="submit" class="btn-admin btn-admin-primary"><i class="bi bi-check-lg"></i> Simpan Semua Perubahan</button>
-</form>.
+</form>
 
 @endsection
