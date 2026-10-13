@@ -15,6 +15,6 @@
     <div class="container">
         <livewire:berita-list />
     </div>
-</section>
+</section>.
 
 @endsection
