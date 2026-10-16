@@ -60,6 +60,6 @@
             Belum ada data ekstrakurikuler.
         </div>
     @endif
-</div>.
+</div>
 
 @endsection
