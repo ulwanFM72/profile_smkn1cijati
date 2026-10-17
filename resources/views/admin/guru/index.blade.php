@@ -58,6 +58,6 @@
             Belum ada data guru.
         </div>
     @endif
-</div>
+</div>.
 
 @endsection
