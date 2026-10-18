@@ -52,6 +52,6 @@
             Belum ada foto galeri.
         </div>
     @endif
-</div>.
+</div>
 
 @endsection

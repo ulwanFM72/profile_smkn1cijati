@@ -58,6 +58,6 @@
             Belum ada data berita. Klik "Tambah Berita" untuk mulai menambahkan.
         </div>
     @endif
-</div>.
+</div>
 
 @endsection
