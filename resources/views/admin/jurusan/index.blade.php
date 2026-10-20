@@ -62,6 +62,6 @@
             Belum ada data jurusan.
         </div>
     @endif
-</div>
+</div>.
 
 @endsection
